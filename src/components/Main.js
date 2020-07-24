@@ -13,6 +13,10 @@ import { DiMongodb } from "react-icons/di";
 import { MdDirectionsRailway } from "react-icons/md";
 import { MdYoutubeSearchedFor } from "react-icons/md";
 import { FaLanguage } from "react-icons/fa";
+import { AiFillSetting } from "react-icons/ai";
+import { GrTools } from "react-icons/gr";
+import { BsTools } from "react-icons/bs";
+
 import "../App.css";
 
 export default class Main extends Component {
@@ -108,33 +112,47 @@ export default class Main extends Component {
           <div className="skill-box-container">
             <div className="box-container">
               <DiReact size={100} color="skyblue" />
-
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
+              <p
+                style={{
+                  fontSize: "25px",
+                  fontFamily:
+                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                  textAlign: "center",
+                }}
+              >
+                Component-based structure and life cycle methods of this
+                framework make it my favourite front-end tool.
+                <BsTools size={25} />
               </p>
             </div>
             <div className="box-container">
               <DiNodejsSmall size={100} color="yellowgreen" />
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
+              <p
+                style={{
+                  fontSize: "25px",
+                  fontFamily:
+                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                  textAlign: "center",
+                }}
+              >
+                Nodejs is one of my favourite backend tools to work with and npm
+                is best package management tool.
+                <GrTools size={25} />
               </p>
             </div>
             <div className="box-container">
               <DiJavascript1 size={100} color="yellow" />
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
+              <p
+                style={{
+                  fontSize: "25px",
+                  fontFamily:
+                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                  textAlign: "center",
+                }}
+              >
+                Familiar with the latest updates on the language as well as
+                hands-on experience with ES6, ES7 and ES8.
+                <AiFillSetting size={25} />
               </p>
             </div>
           </div>
@@ -146,7 +164,8 @@ export default class Main extends Component {
             style={{
               fontStyle: "inherit",
               fontWeight: 500,
-              fontFamily: "Arial, Helvetica, sans-serif",
+              fontFamily:
+                '"Palatino Linotype", "Book Antiqua", Palatino, serif',
             }}
           >
             Portfolio
@@ -154,34 +173,70 @@ export default class Main extends Component {
           <hr width="70%" />
           <div className="skill-box-container">
             <div className="box-container">
-              <MdDirectionsRailway size={100} color="skyblue" />
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-              </p>
+              <MdDirectionsRailway
+                size={100}
+                color="skyblue"
+                style={{ marginTop: "30px" }}
+              />
+              <div
+                style={{
+                  width: "80%",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  fontFamily:
+                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                }}
+              >
+                <p>Website</p>
+                <p>Code</p>
+              </div>
             </div>
             <div className="box-container">
-              <MdYoutubeSearchedFor size={100} color="yellowgreen" />
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-              </p>
+              <MdYoutubeSearchedFor
+                size={100}
+                color="yellowgreen"
+                style={{ marginTop: "30px" }}
+              />
+              <div
+                style={{
+                  width: "80%",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  fontFamily:
+                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                }}
+              >
+                <p>Website</p>
+                <p>Code</p>
+              </div>
             </div>
             <div className="box-container">
-              <FaLanguage size={100} color="yellow" />
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-              </p>
+              <FaLanguage
+                size={100}
+                color="yellow"
+                style={{ marginTop: "30px" }}
+              />
+              <div
+                style={{
+                  width: "80%",
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  fontSize: "20px",
+                  fontFamily:
+                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
+                }}
+              >
+                <p>Website</p>
+                <p>Code</p>
+              </div>
             </div>
           </div>
         </div>
@@ -238,6 +293,7 @@ const Wrapper = styled.div`
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+
       .introduction {
         width: 70%;
         display: flex;
@@ -245,8 +301,12 @@ const Wrapper = styled.div`
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        border-radius: 15px;
         .pic {
           border-radius: 50px;
+          margin-top: 15px;
         }
         .info-container {
           margin-top: 5px;
@@ -314,6 +374,7 @@ const Wrapper = styled.div`
         margin-bottom: 20px;
         p {
           padding: 15px;
+          font-family: '"Palatino Linotype", "Book Antiqua", Palatino, serif';
         }
       }
     }
