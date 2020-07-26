@@ -6,10 +6,12 @@ import { AiFillSetting } from "react-icons/ai";
 import { GrTools } from "react-icons/gr";
 import { BsTools } from "react-icons/bs";
 
+import styled from "styled-components";
+
 export default class Skills extends Component {
   render() {
     return (
-      <div className="skills-container">
+      <SkillContainer className="skills-container">
         <h2
           style={{
             fontStyle: "inherit",
@@ -67,7 +69,40 @@ export default class Skills extends Component {
             </p>
           </div>
         </div>
-      </div>
+      </SkillContainer>
     );
   }
 }
+
+const SkillContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  .skill-box-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+
+    .box-container {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid lightgray;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin-bottom: 20px;
+      p {
+        padding: 15px;
+        font-family: '"Palatino Linotype", "Book Antiqua", Palatino, serif';
+      }
+    }
+  }
+`;

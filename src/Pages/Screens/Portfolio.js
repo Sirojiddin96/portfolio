@@ -2,11 +2,12 @@ import React, { Component } from "react";
 import { MdYoutubeSearchedFor } from "react-icons/md";
 import { FaLanguage } from "react-icons/fa";
 import { MdDirectionsRailway } from "react-icons/md";
+import SkillContainer from "./Skills";
 
 export default class Portfolio extends Component {
   render() {
     return (
-      <div className="skills-container">
+      <SkillContainer className="skills-container">
         <h2
           style={{
             fontStyle: "inherit",
@@ -85,7 +86,7 @@ export default class Portfolio extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </SkillContainer>
     );
   }
 }

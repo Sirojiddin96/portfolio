@@ -8,6 +8,7 @@ export default class Contact extends Component {
     message: "",
     email: "",
     sent: false,
+    contactNumber: "",
     buttonText: "Send Message",
   };
   formSubmit = (e) => {
@@ -15,18 +16,18 @@ export default class Contact extends Component {
     this.setState({
       buttonText: "...sending",
     });
-
     let data = {
       name: this.state.name,
       email: this.state.email,
       message: this.state.message,
+      contactNumber: this.state.contactNumber,
     };
     console.log(data);
 
     axios
-      .post("/api/v1", data)
-      .then((res) => {
-        this.setState({ sent: true, date: {} }, this.resetForm());
+      .post("/contact", data)
+      .then((data) => {
+        this.setState({ sent: true }, data, this.resetForm());
       })
       .catch((error) => {
         console.log("Message not sent", error);
@@ -37,12 +38,13 @@ export default class Contact extends Component {
       name: "",
       message: "",
       email: "",
+      contactNumber: "",
       buttonText: "Message Sent",
     });
   };
   render() {
     return (
-      <div className="contact">
+      <ContactContainer className="contact">
         <div className="header-container">
           <h1>Contact</h1>
           <p className="header-paragraph">
@@ -59,11 +61,9 @@ export default class Contact extends Component {
                     type="name"
                     ref="name"
                     onChange={(e) => this.setState({ name: e.target.value })}
-                    // value={this.state.fields["name"]}
+                    required
+                    value={this.state.name}
                   />
-                  {/* <span style={{ color: "red", fontSize: "20px" }}>
-                    {this.state.errors["name"]}
-                  </span> */}
                 </Label>
                 <Label>
                   <input
@@ -72,23 +72,21 @@ export default class Contact extends Component {
                     size="30"
                     placeholder="Your email please"
                     onChange={(e) => this.setState({ email: e.target.value })}
-                    // value={this.state.fields["email"]}
+                    required
+                    value={this.state.email}
                   />
-                  {/* <span style={{ color: "red", fontSize: "14px" }}>
-                    {this.state.errors["email"]}
-                  </span> */}
                 </Label>
                 <Label>
                   <input
                     type="number"
                     ref="number"
                     placeholder="Your phone number please"
-                    onChange={(e) => this.setState({ number: e.target.value })}
-                    // value={this.state.fields["number"]}
+                    onChange={(e) =>
+                      this.setState({ contactNumber: e.target.value })
+                    }
+                    required
+                    value={this.state.contactNumber}
                   />
-                  {/* <span style={{ color: "red", fontSize: "14px" }}>
-                    {this.state.errors["number"]}
-                  </span> */}
                 </Label>
               </div>
               <div className="message-right-container">
@@ -96,24 +94,115 @@ export default class Contact extends Component {
                   <textarea
                     style={{ width: "100%", height: "180px" }}
                     type="text"
-                    ref="ne"
-                    // onChange={this.handleChange.bind(this, "name")}
-                    // value={this.state.fields["name"]}
+                    ref="text"
+                    placeholder="Enter your message here"
+                    onChange={(e) => this.setState({ message: e.target.value })}
+                    required
+                    value={this.state.message}
                   />
-                  {/* <span style={{ color: "red", fontSize: "14px" }}></span> */}
                 </Label>
               </div>
             </FormContainer>
             <div className="button-container">
-              <button onSubmit={(e) => this.formSubmit(e)}>Send Message</button>
+              <button onSubmit={(e) => this.formSubmit(e)}>
+                {" "}
+                {this.state.buttonText}
+              </button>
             </div>
           </form>
         </div>
-      </div>
+      </ContactContainer>
     );
   }
 }
 
+const ContactContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #92a8d1;
+  padding-bottom: 30px;
+  .header-container {
+    padding: 15px;
+    text-align: center;
+    color: white;
+    font-size: 20px;
+    font-family: Arial;
+  }
+  .message-form-container {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    padding: 30px;
+    .message-form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      padding-top: 30px;
+      .message-left-container {
+        width: 45%;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        input {
+          height: 25px;
+          width: 80%;
+          padding: 10px;
+          font-size: 17px;
+          font-style: oblique;
+          font-weight: 300;
+          background-color: #333333;
+          color: white;
+        }
+      }
+      .message-right-container {
+        width: 45%;
+        display: flex;
+        height: 200px;
+        flex-direction: column;
+        textarea {
+          padding: 10px;
+          font-size: 17px;
+          font-weight: 300;
+          background-color: #333333;
+          color: white;
+          font-style: oblique;
+        }
+      }
+    }
+    .button-container {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      background-color: white-space;
+      button {
+        padding: 10px;
+        font-family: Arial;
+        color: black;
+        font-size: 20px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #92a8d1;
+        color: white;
+        border: 1px solid gray;
+      }
+    }
+  }
+`;
 const Label = styled.div`
   width: 100%;
   display: flex;

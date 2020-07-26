@@ -8,10 +8,13 @@ import { MdCardTravel } from "react-icons/md";
 import { DiReact } from "react-icons/di";
 import { DiNodejsSmall } from "react-icons/di";
 import { DiJavascript1 } from "react-icons/di";
+
+import styled from "styled-components";
+
 export default class About extends Component {
   render() {
     return (
-      <div className="middle-container">
+      <MiddleContainer className="middle-container">
         <div className="profile">
           <div className="introduction">
             <img
@@ -68,7 +71,73 @@ export default class About extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </MiddleContainer>
     );
   }
 }
+
+const MiddleContainer = styled.div`
+  width: 100%;
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  .profile {
+    width: 50%;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .introduction {
+      width: 70%;
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 15px;
+      .pic {
+        border-radius: 50px;
+        margin-top: 15px;
+      }
+      .info-container {
+        margin-top: 5px;
+      }
+    }
+  }
+  .text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px;
+    margin-bottom: 15px;
+    .blog {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .briefInfo {
+        width: 95%;
+        margin: 0 0 0 15px;
+        font-weight: 700;
+        font-size: 20px;
+      }
+      .briefInfo.p {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 700;
+      }
+      .icons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+    }
+  }
+`;
