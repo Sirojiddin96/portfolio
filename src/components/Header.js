@@ -7,7 +7,7 @@ export default class Header extends Component {
       <Wrapper>
         <div className="main">
           <div className="header-left">
-            <p>When in doubt, build something</p>
+            <p>When in doubt, Build something</p>
           </div>
           <div className="header-right">
             <li>Home</li>
@@ -27,8 +27,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #333333;
-
+  background-color: #3b0062;
   .main {
     width: 95%;
     display: flex;
@@ -54,5 +53,6 @@ const Wrapper = styled.div`
     color: white;
     font-weight: bold;
     padding: 10px 0 10px 0;
+    cursor: pointer;
   }
 `;

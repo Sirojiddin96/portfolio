@@ -1,268 +1,27 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import logo from "../assets/logo.svg";
-import definition from "../assets/definition.jpg";
-import image from "../assets/image.jpg";
-import { AiFillGithub, AiFillMessage } from "react-icons/ai";
-import { AiFillFacebook } from "react-icons/ai";
-import { AiFillLinkedin } from "react-icons/ai";
-import { DiReact } from "react-icons/di";
-import { DiNodejsSmall } from "react-icons/di";
-import { DiJavascript1 } from "react-icons/di";
-import { DiMongodb } from "react-icons/di";
-import { MdDirectionsRailway } from "react-icons/md";
-import { MdYoutubeSearchedFor } from "react-icons/md";
-import { FaLanguage } from "react-icons/fa";
-import { AiFillSetting } from "react-icons/ai";
-import { GrTools } from "react-icons/gr";
-import { BsTools } from "react-icons/bs";
 
 import "../App.css";
+import About from "../Pages/Screens/About";
+import Skills from "../Pages/Screens/Skills";
+import Portfolio from "../Pages/Screens/Portfolio";
+import Contact from "../Pages/Screens/Contact";
+import Banner from "./Banner";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default class Main extends Component {
   render() {
     return (
       <Wrapper>
-        <div className="main">
-          {/* <img
-            className="image"
-            src={definition}
-            alt="Banner"
-            style={{ width: "100%", height: "100%", opacity: "0.7" }}
-          /> */}
-          <img
-            src={logo}
-            className="App-logo"
-            alt="logo"
-            style={{ width: "100%", height: "100%", opacity: "0.7" }}
-          />
-        </div>
-
-        <hr width="100%" />
-        <div>
-          <h2
-            style={{
-              fontStyle: "inherit",
-              fontWeight: 500,
-              fontFamily: "Arial, Helvetica, sans-serif",
-            }}
-          >
-            About me
-          </h2>
-        </div>
-        <hr width="100%" />
-        <div className="middle-container">
-          <div className="profile">
-            <div className="introduction">
-              <img
-                className="pic"
-                src={image}
-                alt="pic"
-                style={{ width: "250px", height: "250px" }}
-              />
-              <div className="info-container">
-                <AiFillGithub size={50} />
-                <AiFillFacebook size={50} />
-                <AiFillLinkedin size={50} />
-                <AiFillMessage size={50} />
-              </div>
-            </div>
-          </div>
-          <div className="text">
-            <div className="blog">
-              <h3 style={{ margin: "15px 0 0 15px" }}>
-                <strong>Welcome to my Area</strong>
-              </h3>
-              <div className="briefInfo">
-                <p>
-                  I am a Software developer with strong experience in Web as
-                  well as Mobile development, dedicated to learning and building
-                  projects with following areas:
-                </p>
-              </div>
-              <div className="icons">
-                <DiReact size={100} color="skyblue" />
-                <DiNodejsSmall size={100} color="yellowgreen" />
-                <DiJavascript1 size={100} color="yellow" />
-                <DiMongodb size={50} color="yellowgreen" />
-                {/* <DiPython size={100} color="" /> */}
-              </div>
-              <div className="briefInfo">
-                <p>
-                  I am a Software developer with strong experience in Web as
-                  well as Mobile development, dedicated to learning and building
-                  projects with following areas:
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Banner />
+        <About />
         <hr width="90%" />
-        <div class="skills-container">
-          <h2
-            style={{
-              fontStyle: "inherit",
-              fontWeight: 500,
-              fontFamily: "Arial, Helvetica, sans-serif",
-            }}
-          >
-            Experiences
-          </h2>
-          <hr width="70%" />
-          <div className="skill-box-container">
-            <div className="box-container">
-              <DiReact size={100} color="skyblue" />
-              <p
-                style={{
-                  fontSize: "25px",
-                  fontFamily:
-                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                  textAlign: "center",
-                }}
-              >
-                Component-based structure and life cycle methods of this
-                framework make it my favourite front-end tool.
-                <BsTools size={25} />
-              </p>
-            </div>
-            <div className="box-container">
-              <DiNodejsSmall size={100} color="yellowgreen" />
-              <p
-                style={{
-                  fontSize: "25px",
-                  fontFamily:
-                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                  textAlign: "center",
-                }}
-              >
-                Nodejs is one of my favourite backend tools to work with and npm
-                is best package management tool.
-                <GrTools size={25} />
-              </p>
-            </div>
-            <div className="box-container">
-              <DiJavascript1 size={100} color="yellow" />
-              <p
-                style={{
-                  fontSize: "25px",
-                  fontFamily:
-                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                  textAlign: "center",
-                }}
-              >
-                Familiar with the latest updates on the language as well as
-                hands-on experience with ES6, ES7 and ES8.
-                <AiFillSetting size={25} />
-              </p>
-            </div>
-          </div>
-        </div>
-
+        <Skills />
         {/* Portfolio */}
-        <div class="skills-container">
-          <h2
-            style={{
-              fontStyle: "inherit",
-              fontWeight: 500,
-              fontFamily:
-                '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-            }}
-          >
-            Portfolio
-          </h2>
-          <hr width="70%" />
-          <div className="skill-box-container">
-            <div className="box-container">
-              <MdDirectionsRailway
-                size={100}
-                color="skyblue"
-                style={{ marginTop: "30px" }}
-              />
-              <div
-                style={{
-                  width: "80%",
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  fontSize: "20px",
-                  fontFamily:
-                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                }}
-              >
-                <p>Website</p>
-                <p>Code</p>
-              </div>
-            </div>
-            <div className="box-container">
-              <MdYoutubeSearchedFor
-                size={100}
-                color="yellowgreen"
-                style={{ marginTop: "30px" }}
-              />
-              <div
-                style={{
-                  width: "80%",
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  fontSize: "20px",
-                  fontFamily:
-                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                }}
-              >
-                <p>Website</p>
-                <p>Code</p>
-              </div>
-            </div>
-            <div className="box-container">
-              <FaLanguage
-                size={100}
-                color="yellow"
-                style={{ marginTop: "30px" }}
-              />
-              <div
-                style={{
-                  width: "80%",
-                  display: "flex",
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  fontSize: "20px",
-                  fontFamily:
-                    '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                }}
-              >
-                <p>Website</p>
-                <p>Code</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="contact">
-          <div className="header-container">
-            <h1>Contact</h1>
-            <p className="header-paragraph">
-              Feel free to contact me in case of project or work suggestions
-            </p>
-          </div>
-          <div className="message-form-container">
-            <div className="message-form">
-              <div className="message-left-container">
-                <input placeholder="Your name please" />
-                <input placeholder="Your email please" />
-                <input placeholder="Your phone please" />
-              </div>
-              <div className="message-right-container">
-                <textarea style={{ height: "200px" }}></textarea>
-              </div>
-            </div>
-            <div className="button-container">
-              <button>Send Message</button>
-            </div>
-          </div>
-        </div>
+        <Portfolio />
+        {/*  Contact   */}
+        <Contact />
       </Wrapper>
     );
   }
@@ -293,7 +52,6 @@ const Wrapper = styled.div`
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-
       .introduction {
         width: 70%;
         display: flex;
@@ -405,7 +163,7 @@ const Wrapper = styled.div`
       .message-form {
         width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
         padding-top: 30px;
