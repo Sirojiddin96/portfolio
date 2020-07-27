@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import { MdYoutubeSearchedFor } from "react-icons/md";
 import { FaLanguage } from "react-icons/fa";
 import { MdDirectionsRailway } from "react-icons/md";
-import SkillContainer from "./Skills";
+import styled from "styled-components";
 
 export default class Portfolio extends Component {
   render() {
     return (
-      <SkillContainer className="skills-container">
+      <PortfolioContainer>
         <h2
           style={{
             fontStyle: "inherit",
@@ -72,6 +72,7 @@ export default class Portfolio extends Component {
             <div
               style={{
                 width: "80%",
+                height: "auto",
                 display: "flex",
                 flexDirection: "row",
                 justifyContent: "space-between",
@@ -86,7 +87,43 @@ export default class Portfolio extends Component {
             </div>
           </div>
         </div>
-      </SkillContainer>
+      </PortfolioContainer>
     );
   }
 }
+
+const PortfolioContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  .skill-box-container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    @media (max-width: 768px) {
+      width: 100%;
+      flex-direction: column;
+    }
+    .box-container {
+      width: 25%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid lightgray;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin-bottom: 20px;
+      @media (max-width: 768px) {
+        width: 80%;
+        flex-direction: column;
+      }
+    }
+  }
+`;

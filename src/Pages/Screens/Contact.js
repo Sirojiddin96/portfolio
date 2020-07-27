@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { device } from "../../config/device";
 
 export default class Contact extends Component {
   state = {
@@ -124,12 +125,20 @@ const ContactContainer = styled.div`
   align-items: center;
   background-color: #92a8d1;
   padding-bottom: 30px;
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: column;
+  }
   .header-container {
     padding: 15px;
     text-align: center;
     color: white;
     font-size: 20px;
     font-family: Arial;
+    @media (max-width: 768px) {
+      width: 100%;
+      font-size: 15px;
+    }
   }
   .message-form-container {
     width: 85%;
@@ -146,6 +155,10 @@ const ContactContainer = styled.div`
       justify-content: space-around;
       align-items: center;
       padding-top: 30px;
+      @media (max-width: 768px) {
+        width: 100%;
+        flex-direction: column;
+      }
       .message-left-container {
         width: 45%;
         height: 200px;
@@ -153,7 +166,11 @@ const ContactContainer = styled.div`
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
-
+        @media (max-width: 768px) {
+          width: 100%;
+          flex-direction: column;
+          margin-bottom: 15px;
+        }
         input {
           height: 25px;
           width: 80%;
@@ -163,6 +180,10 @@ const ContactContainer = styled.div`
           font-weight: 300;
           background-color: #333333;
           color: white;
+          @media (max-width: 768px) {
+            width: 100%;
+            flex-direction: row;
+          }
         }
       }
       .message-right-container {
@@ -170,6 +191,10 @@ const ContactContainer = styled.div`
         display: flex;
         height: 200px;
         flex-direction: column;
+        @media (max-width: 768px) {
+          width: 100%;
+          flex-direction: row;
+        }
         textarea {
           padding: 10px;
           font-size: 17px;
@@ -216,4 +241,8 @@ const FormContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    width: 80%;
+    flex-direction: column;
+  }
 `;

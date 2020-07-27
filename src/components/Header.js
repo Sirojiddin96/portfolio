@@ -28,6 +28,10 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #3b0062;
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-direction: row;
+  }
   .main {
     width: 95%;
     display: flex;
@@ -41,6 +45,10 @@ const Wrapper = styled.div`
     color: white;
     font-weight: bold;
     padding: 5px 0 5px 0;
+    @media (max-width: 768px) {
+      width: 100%;
+      text-align: center;
+    }
   }
   .header-right {
     width: 40%;
@@ -54,5 +62,8 @@ const Wrapper = styled.div`
     font-weight: bold;
     padding: 10px 0 10px 0;
     cursor: pointer;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 `;

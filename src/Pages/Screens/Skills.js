@@ -5,13 +5,14 @@ import { DiJavascript1 } from "react-icons/di";
 import { AiFillSetting } from "react-icons/ai";
 import { GrTools } from "react-icons/gr";
 import { BsTools } from "react-icons/bs";
+import { DiMongodb } from "react-icons/di";
 
 import styled from "styled-components";
 
 export default class Skills extends Component {
   render() {
     return (
-      <SkillContainer className="skills-container">
+      <SkillContainer primary>
         <h2
           style={{
             fontStyle: "inherit",
@@ -24,49 +25,46 @@ export default class Skills extends Component {
         <hr width="70%" />
         <div className="skill-box-container">
           <div className="box-container">
-            <DiReact size={100} color="skyblue" />
-            <p
-              style={{
-                fontSize: "25px",
-                fontFamily:
-                  '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                textAlign: "center",
-              }}
-            >
-              Component-based structure and life cycle methods of this framework
-              make it my favourite front-end tool.
-              <BsTools size={25} />
-            </p>
+            <div className="box">
+              <DiReact size={100} color="skyblue" />
+              <p className="text">
+                Component-based structure and life cycle methods of this
+                framework make it my favourite front-end tool.
+                <BsTools size={25} />
+              </p>
+            </div>
           </div>
           <div className="box-container">
-            <DiNodejsSmall size={100} color="yellowgreen" />
-            <p
-              style={{
-                fontSize: "25px",
-                fontFamily:
-                  '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                textAlign: "center",
-              }}
-            >
-              Nodejs is one of my favourite backend tools to work with and npm
-              is best package management tool.
-              <GrTools size={25} />
-            </p>
+            <div className="box">
+              <DiNodejsSmall size={100} color="yellowgreen" />
+              <p className="text">
+                Nodejs is one of my favourite backend tools to work with and npm
+                is best package management tool.
+                <GrTools size={25} />
+              </p>
+            </div>
           </div>
           <div className="box-container">
-            <DiJavascript1 size={100} color="yellow" />
-            <p
-              style={{
-                fontSize: "25px",
-                fontFamily:
-                  '"Palatino Linotype", "Book Antiqua", Palatino, serif',
-                textAlign: "center",
-              }}
-            >
-              Familiar with the latest updates on the language as well as
-              hands-on experience with ES6, ES7 and ES8.
-              <AiFillSetting size={25} />
-            </p>
+            <div className="box">
+              <DiJavascript1 size={100} color="yellow" />
+
+              <p className="text">
+                Familiar with the latest updates on the language as well as
+                hands-on experience with ES6, ES7 and ES8.
+                <AiFillSetting size={25} />
+              </p>
+            </div>
+          </div>
+          <div className="box-container">
+            <div className="box">
+              <DiMongodb color="yellowgreen" size={100} />
+
+              <p className="text">
+                Familiar with the latest updates on the language as well as
+                hands-on experience with ES6, ES7 and ES8.
+                <AiFillSetting size={25} />
+              </p>
+            </div>
           </div>
         </div>
       </SkillContainer>
@@ -81,27 +79,44 @@ const SkillContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   margin-top: 15px;
+  background: ${(props) => (props.primary ? "palevioletred" : "white")};
   .skill-box-container {
     width: 90%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     .box-container {
-      width: 30%;
+      width: 25%;
       display: flex;
       flex-direction: column;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
       border: 1px solid lightgray;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      margin-bottom: 20px;
-      p {
-        padding: 15px;
-        font-family: '"Palatino Linotype", "Book Antiqua", Palatino, serif';
+      margin: 20px;
+      background-color: white;
+      @media (max-width: 768px) {
+        width: 100%;
+        flex-direction: column;
+      }
+      .box {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        .text {
+          font-size: 1.3em;
+          font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
+          text-align: center;
+          padding: 5px;
+        }
       }
     }
   }
