@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 import { AiOutlineCopyright } from "react-icons/ai";
 
 export default class Footer extends Component {

@@ -16,42 +16,50 @@ export default class About extends Component {
     return (
       <MiddleContainer>
         <div className="profile">
-          <div className="introduction">
-            <img className="pic" src={image} alt="pic" />
-            <div className="info-container">
-              <AiFillGithub size={50} />
-              <AiFillFacebook size={50} />
-              <AiFillLinkedin size={50} />
-              <AiFillMessage size={50} />
-            </div>
+          <div className="pic">
+            <img src={image} alt="pic" />
+          </div>
+          <div className="info-container">
+            <AiFillGithub size={50} />
+            <AiFillFacebook size={50} />
+            <AiFillLinkedin size={50} />
+            <AiFillMessage size={50} />
           </div>
         </div>
-        <div className="text">
-          <div className="blog">
-            <h3 style={{ margin: "15px 0 0 15px", textAlign: "center" }}>
-              <strong>Welcome to my Area</strong>
-            </h3>
-            <div className="briefInfo">
-              <p className="description">
-                I am a Software developer with strong experience in Web as well
-                as Mobile development, dedicated to learning and building
-                projects with following areas:
-              </p>
+
+        <div className="blog">
+          <h3 style={{ margin: "15px 0 0 15px", textAlign: "center" }}>
+            <strong>Welcome to my Area</strong>
+          </h3>
+          <div className="briefInfo">
+            <p className="description">
+              I am a Software developer with strong experience in Web as well as
+              Mobile development, dedicated to learning and building projects
+              with following areas:
+            </p>
+          </div>
+          <div className="icons">
+            <div className="react">
+              <DiReact size={"100%"} color="skyblue" />
             </div>
-            <div className="icons">
-              <DiReact size={100} color="skyblue" />
-              <DiNodejsSmall size={100} color="yellowgreen" />
-              <DiJavascript1 size={100} color="yellow" />
-              <DiMongodb size={100} color="yellowgreen" />
-              {/* <DiPython size={100} color="" /> */}
+            <div className="react">
+              <DiNodejsSmall size={"100%"} color="yellowgreen" />
             </div>
-            <div className="briefInfo">
-              <p className="description">
-                Nowadays, I am working on with website which is about making
-                reservation and getting tickets in train system for travellers
-                <MdCardTravel size={20} color="skyblue" />
-              </p>
+            <div className="react">
+              <DiJavascript1 size={"100%"} color="yellow" />
             </div>
+            <div className="react">
+              <DiMongodb size={"100%"} color="yellowgreen" />
+            </div>
+
+            {/* <DiPython size={100} color="" /> */}
+          </div>
+          <div className="briefInfo">
+            <p className="description">
+              Nowadays, I am working on with website which is about making
+              reservation and getting tickets in train system for travellers
+              <MdCardTravel size={20} color="skyblue" />
+            </p>
           </div>
         </div>
       </MiddleContainer>
@@ -67,61 +75,53 @@ const MiddleContainer = styled.div`
   justify-content: space-between;
   @media (max-width: 768px) {
     width: 90%;
+    display:flex;
+    align-items:center;
     flex-direction: column;
   }
   .profile {
-    width: 50%;
+    width: 30%;
     display: flex;
     position: relative;
-    flex-direction: row;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     @media (max-width: 768px) {
       width: 100%;
+      display:flex;
       flex-direction: column;
       margin-bottom: 15px;
+      border:1px solid gray;
     }
-    .introduction {
-      width: 70%;
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-        0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      border-radius: 15px;
-      .pic {
-        border-radius: 50px;
-        margin-top: 15px;
-        width: 250px;
-        height: 250px;
+    .pic {
+        width:250px;
+        margin: 5px;
         @media (max-width: 768px) {
-          width: 200px;
-          height: 200px;
+          width:60%
+        }
+        img{
+          width:100%
         }
       }
       .info-container {
         margin-top: 5px;
       }
       @media (max-width: 768px) {
-        width: 60%;
+        width: 80%;
         flex-direction: column;
       }
     }
   }
-  .text {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    color: black;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 15px;
-    margin-bottom: 15px;
     .blog {
-      width: 100%;
+      width: 90%;
       display: flex;
       flex-direction: column;
+      display: flex;
+      flex-direction: column;
+      color: black;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin-left: 15px;
       .briefInfo {
         width: 95%;
         margin: 0 0 0 15px;
@@ -141,7 +141,8 @@ const MiddleContainer = styled.div`
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+        .react{
+          width:10%
+        }
       }
-    }
-  }
 `;

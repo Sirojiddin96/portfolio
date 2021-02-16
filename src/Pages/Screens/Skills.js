@@ -79,9 +79,9 @@ const SkillContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   margin-top: 15px;
-  background: ${(props) => (props.primary ? "palevioletred" : "white")};
+  background: white;
   .skill-box-container {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -91,7 +91,8 @@ const SkillContainer = styled.div`
       flex-direction: column;
     }
     .box-container {
-      width: 25%;
+      width: 24%;
+      height: 270px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -99,10 +100,12 @@ const SkillContainer = styled.div`
       border: 1px solid lightgray;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      margin: 20px;
+
       background-color: white;
+      animation: 0.3s ease-out forwards;
       @media (max-width: 768px) {
-        width: 100%;
+        width: 80%;
+        margin-top: 15px;
         flex-direction: column;
       }
       .box {
@@ -112,7 +115,7 @@ const SkillContainer = styled.div`
         justify-content: space-between;
         align-items: center;
         .text {
-          font-size: 1.3em;
+          font-size: 15px;
           font-family: Palatino Linotype, Book Antiqua, Palatino, serif;
           text-align: center;
           padding: 5px;

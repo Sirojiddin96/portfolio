@@ -8,13 +8,12 @@ import Portfolio from "../Pages/Screens/Portfolio";
 import Contact from "../Pages/Screens/Contact";
 import Banner from "./Banner";
 
-export default class Main extends Component {
+export default class Home extends Component {
   render() {
     return (
       <Wrapper>
         <Banner />
         <About />
-        <hr width="90%" />
         <Skills />
         {/* Portfolio */}
         <Portfolio />

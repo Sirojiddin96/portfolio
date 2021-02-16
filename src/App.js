@@ -1,18 +1,20 @@
 import React from "react";
-
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import styled from "styled-components";
+import Main from "./Pages";
 
 function App() {
   return (
-    <div>
-      <Header />
-      <hr />
+    <Wrapper>
       <Main />
-      <Footer />
-    </div>
+    </Wrapper>
   );
 }
 
 export default App;
+
+const Wrapper = styled.div`
+  width: 100%;
+  max-width: 1280px;
+  height: auto;
+  margin: auto;
+`;
