@@ -8,6 +8,7 @@ import { MdCardTravel } from "react-icons/md";
 import { DiReact } from "react-icons/di";
 import { DiNodejsSmall } from "react-icons/di";
 import { DiJavascript1 } from "react-icons/di";
+// import { FaVuejs } from "react-icons/fa";
 
 import styled from "styled-components";
 
@@ -56,8 +57,9 @@ export default class About extends Component {
           </div>
           <div className="briefInfo">
             <p className="description">
-              Nowadays, I am working on with website which is about making
-              reservation and getting tickets in train system for travellers
+              Nowadays, I am working for a software company which outsources
+              projects. Current project we are working on is Online Golf Retail
+              tools website. I am the front-end developer for this online store.
               <MdCardTravel size={20} color="skyblue" />
             </p>
           </div>
