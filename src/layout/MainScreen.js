@@ -9,7 +9,7 @@ export default MainScreen;
 
 const Wrapper = styled.div`
   width: 100%;
+  max-width: 1280px;
   height: auto;
-  padding: 0;
-  margin: 0;
+  margin: auto;
 `;

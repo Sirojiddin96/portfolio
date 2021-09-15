@@ -1,5 +1,6 @@
 import React from 'react';
-import MainScreen from '../MainScreen';
+
+import MainScreen from './../../layout/MainScreen';
 
 const Details = () => {
   return (

@@ -1,28 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 import '../App.css';
-import About from '../Pages/About';
-import Skills from '../Pages/Skills';
-import Portfolio from '../Pages/Portfolio';
-import Contact from '../Pages/Contact';
+import About from '../sections/About';
+import Skills from '../sections/Skills';
+import Portfolio from '../sections/Portfolio';
+import Contact from '../sections/Contact';
 import Banner from './Banner';
 
-export default class Home extends Component {
-  render() {
-    return (
-      <Wrapper>
-        <Banner />
-        <About />
-        <Skills />
-        {/* Portfolio */}
-        <Portfolio />
-        {/*  Contact   */}
-        <Contact />
-      </Wrapper>
-    );
-  }
-}
+const Home = () => {
+  return (
+    <Wrapper>
+      <Banner />
+      <About />
+      <Skills />
+      <Portfolio />
+      <Contact />
+    </Wrapper>
+  );
+};
+export default Home;
 const Wrapper = styled.div`
   width: 100%;
   position: relative;
