@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { DiReact } from 'react-icons/di';
 import { DiNodejsSmall } from 'react-icons/di';
 import { DiJavascript1 } from 'react-icons/di';

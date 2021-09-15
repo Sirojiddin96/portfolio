@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import { MdYoutubeSearchedFor } from 'react-icons/md';
 import { AiFillApi } from 'react-icons/ai';
 import { FaSalesforce } from 'react-icons/fa';
-import { MdDirectionsRailway, MdLanguage } from 'react-icons/md';
+import { MdLanguage } from 'react-icons/md';
 import styled from 'styled-components';
 
 const Portfolio = () => {
