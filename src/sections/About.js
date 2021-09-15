@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import image from '../assets/photo.jpg';
-import { AiFillGithub, AiFillMessage } from 'react-icons/ai';
-import { AiFillFacebook } from 'react-icons/ai';
-import { AiFillLinkedin } from 'react-icons/ai';
-import { DiMongodb } from 'react-icons/di';
+import {
+  AiFillGithub,
+  AiFillMessage,
+  AiFillFacebook,
+  AiFillLinkedin,
+} from 'react-icons/ai';
+
+import {
+  DiNodejsSmall,
+  DiJavascript1,
+  DiReact,
+  DiMongodb,
+} from 'react-icons/di';
 import { MdCardTravel } from 'react-icons/md';
-import { DiReact } from 'react-icons/di';
-import { DiNodejsSmall } from 'react-icons/di';
-import { DiJavascript1 } from 'react-icons/di';
+
 // import { FaVuejs } from "react-icons/fa";
 
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export default class About extends Component {
   render() {
@@ -21,10 +29,13 @@ export default class About extends Component {
             <img src={image} alt="pic" />
           </div>
           <div className="info-container">
-            <AiFillGithub size={50} />
-            <AiFillFacebook size={50} />
-            <AiFillLinkedin size={50} />
-            <AiFillMessage size={50} />
+            <a href="https://github.com/Sirojiddin96">
+              <AiFillGithub size={50} style={{ cursor: 'pointer' }} />
+            </a>
+
+            <AiFillFacebook size={50} style={{ cursor: 'pointer' }} />
+            <AiFillLinkedin size={50} style={{ cursor: 'pointer' }} />
+            <AiFillMessage size={50} style={{ cursor: 'pointer' }} />
           </div>
         </div>
 
@@ -75,6 +86,9 @@ const MiddleContainer = styled.div`
   position: relative;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-start;
+  box-sizing: border-box;
+  
   @media (max-width: 768px) {
     width: 90%;
     display:flex;
@@ -89,6 +103,7 @@ const MiddleContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: #fff;
     @media (max-width: 768px) {
       width: 100%;
       display:flex;
@@ -123,6 +138,7 @@ const MiddleContainer = styled.div`
       flex-direction: column;
       color: black;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-color: #fff;
       margin-left: 15px;
       h3{
       margin: 15px 0 0 15px;

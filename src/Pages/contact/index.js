@@ -1,20 +1,21 @@
-import React, { Component } from "react";
-import styled from "styled-components";
-import axios from "axios";
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import axios from 'axios';
+import Home from '../home';
 
 export default class Contact extends Component {
   state = {
-    name: "",
-    message: "",
-    email: "",
+    name: '',
+    message: '',
+    email: '',
     sent: false,
-    contactNumber: "",
-    buttonText: "Send Message",
+    contactNumber: '',
+    buttonText: 'Send Message',
   };
   formSubmit = (e) => {
     e.preventDefault();
     this.setState({
-      buttonText: "...sending",
+      buttonText: '...sending',
     });
     let data = {
       name: this.state.name,
@@ -25,93 +26,97 @@ export default class Contact extends Component {
     console.log(data);
 
     axios
-      .post("/contact", data)
+      .post('/contact', data)
       .then((data) => {
         this.setState({ sent: true }, data, this.resetForm());
       })
       .catch((error) => {
-        console.log("Message not sent", error);
+        console.log('Message not sent', error);
       });
   };
   resetForm = () => {
     this.setState({
-      name: "",
-      message: "",
-      email: "",
-      contactNumber: "",
-      buttonText: "Message Sent",
+      name: '',
+      message: '',
+      email: '',
+      contactNumber: '',
+      buttonText: 'Message Sent',
     });
   };
   render() {
     return (
-      <ContactContainer className="contact">
-        <div className="header-container">
-          <h1>Contact</h1>
-          <p className="header-paragraph">
-            Feel free to contact me in case of project or work suggestions
-          </p>
-        </div>
-        <div className="message-form-container">
-          <form className="message-form" onSubmit={(e) => this.formSubmit(e)}>
-            <FormContainer>
-              <div className="message-left-container">
-                <Label>
-                  <input
-                    placeholder="Your name please"
-                    type="name"
-                    ref="name"
-                    onChange={(e) => this.setState({ name: e.target.value })}
-                    required
-                    value={this.state.name}
-                  />
-                </Label>
-                <Label>
-                  <input
-                    type="email"
-                    ref="email"
-                    size="30"
-                    placeholder="Your email please"
-                    onChange={(e) => this.setState({ email: e.target.value })}
-                    required
-                    value={this.state.email}
-                  />
-                </Label>
-                <Label>
-                  <input
-                    type="number"
-                    ref="number"
-                    placeholder="Your phone number please"
-                    onChange={(e) =>
-                      this.setState({ contactNumber: e.target.value })
-                    }
-                    required
-                    value={this.state.contactNumber}
-                  />
-                </Label>
+      <Home>
+        <ContactContainer className="contact">
+          <div className="header-container">
+            <h1>Contact</h1>
+            <p className="header-paragraph">
+              Feel free to contact me in case of project or work suggestions
+            </p>
+          </div>
+          <div className="message-form-container">
+            <form className="message-form" onSubmit={(e) => this.formSubmit(e)}>
+              <FormContainer>
+                <div className="message-left-container">
+                  <Label>
+                    <input
+                      placeholder="Your name please"
+                      type="name"
+                      ref="name"
+                      onChange={(e) => this.setState({ name: e.target.value })}
+                      required
+                      value={this.state.name}
+                    />
+                  </Label>
+                  <Label>
+                    <input
+                      type="email"
+                      ref="email"
+                      size="30"
+                      placeholder="Your email please"
+                      onChange={(e) => this.setState({ email: e.target.value })}
+                      required
+                      value={this.state.email}
+                    />
+                  </Label>
+                  <Label>
+                    <input
+                      type="number"
+                      ref="number"
+                      placeholder="Your phone number please"
+                      onChange={(e) =>
+                        this.setState({ contactNumber: e.target.value })
+                      }
+                      required
+                      value={this.state.contactNumber}
+                    />
+                  </Label>
+                </div>
+                <div className="message-right-container">
+                  <Label>
+                    <textarea
+                      style={{ width: '100%', height: '180px' }}
+                      type="text"
+                      ref="text"
+                      placeholder="Enter your message here"
+                      onChange={(e) =>
+                        this.setState({ message: e.target.value })
+                      }
+                      required
+                      value={this.state.message}
+                    />
+                  </Label>
+                </div>
+              </FormContainer>
+              <div className="button-container">
+                <button onSubmit={(e) => this.formSubmit(e)}>
+                  {' '}
+                  {this.state.buttonText}
+                </button>
               </div>
-              <div className="message-right-container">
-                <Label>
-                  <textarea
-                    style={{ width: "100%", height: "180px" }}
-                    type="text"
-                    ref="text"
-                    placeholder="Enter your message here"
-                    onChange={(e) => this.setState({ message: e.target.value })}
-                    required
-                    value={this.state.message}
-                  />
-                </Label>
-              </div>
-            </FormContainer>
-            <div className="button-container">
-              <button onSubmit={(e) => this.formSubmit(e)}>
-                {" "}
-                {this.state.buttonText}
-              </button>
-            </div>
-          </form>
-        </div>
-      </ContactContainer>
+            </form>
+          </div>
+        </ContactContainer>
+      </Home>
     );
   }
 }

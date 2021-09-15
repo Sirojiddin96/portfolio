@@ -1,16 +1,12 @@
 import React from 'react';
 import Header from '../../components/Header';
 import MainScreen from '../../layout/MainScreen';
-import Main from './../../components/Main';
-import Footer from '../../components/Footer';
 
-const Home = () => {
+const Home = (props) => {
   return (
     <MainScreen>
       <Header />
-      <hr />
-      <Main />
-      <Footer />
+      {props.children}
     </MainScreen>
   );
 };

@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export default class Header extends Component {
   render() {
@@ -7,15 +8,15 @@ export default class Header extends Component {
       <Wrapper>
         <div className="main">
           <div className="header-left">
-            <p>When in doubt, Build something</p>
+            <Link to="portfolio">Portfolio</Link>
           </div>
           <div className="header-right">
-            <li>Home</li>
-            <li>About</li>
-            <li>Skills</li>
-            <li>Portfolio</li>
-            <li>Blog</li>
-            <li>Contact</li>
+            <Link to="/">Home</Link>
+
+            <Link to="/skills">Skills</Link>
+            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/contact">Contact</Link>
           </div>
         </div>
       </Wrapper>
@@ -24,10 +25,15 @@ export default class Header extends Component {
 }
 const Wrapper = styled.div`
   width: 100%;
+  height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #3b0062;
+  background-color: white;
+  // box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-bottom: none;
   @media (max-width: 768px) {
     width: 100%;
     flex-direction: row;
@@ -45,13 +51,17 @@ const Wrapper = styled.div`
     color: white;
     font-weight: bold;
     padding: 5px 0 5px 0;
+    a {
+      text-decoration: none;
+      color: #3b0062;
+    }
     @media (max-width: 768px) {
       width: 100%;
       text-align: center;
     }
   }
   .header-right {
-    width: 40%;
+    width: 30%;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -62,6 +72,10 @@ const Wrapper = styled.div`
     font-weight: bold;
     padding: 10px 0 10px 0;
     cursor: pointer;
+    a {
+      text-decoration: none;
+      color: #3b0062;
+    }
     @media (max-width: 768px) {
       display: none;
     }
