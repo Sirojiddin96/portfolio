@@ -1,16 +1,16 @@
-import React, { Component } from "react";
-import image from "../../assets/image.jpg";
-import { AiFillGithub, AiFillMessage } from "react-icons/ai";
-import { AiFillFacebook } from "react-icons/ai";
-import { AiFillLinkedin } from "react-icons/ai";
-import { DiMongodb } from "react-icons/di";
-import { MdCardTravel } from "react-icons/md";
-import { DiReact } from "react-icons/di";
-import { DiNodejsSmall } from "react-icons/di";
-import { DiJavascript1 } from "react-icons/di";
+import React, { Component } from 'react';
+import image from '../../assets/image.jpg';
+import { AiFillGithub, AiFillMessage } from 'react-icons/ai';
+import { AiFillFacebook } from 'react-icons/ai';
+import { AiFillLinkedin } from 'react-icons/ai';
+import { DiMongodb } from 'react-icons/di';
+import { MdCardTravel } from 'react-icons/md';
+import { DiReact } from 'react-icons/di';
+import { DiNodejsSmall } from 'react-icons/di';
+import { DiJavascript1 } from 'react-icons/di';
 // import { FaVuejs } from "react-icons/fa";
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default class About extends Component {
   render() {
@@ -29,7 +29,7 @@ export default class About extends Component {
         </div>
 
         <div className="blog">
-          <h3 style={{ margin: "15px 0 0 15px", textAlign: "center" }}>
+          <h3>
             <strong>Welcome to my Area</strong>
           </h3>
           <div className="briefInfo">
@@ -41,16 +41,16 @@ export default class About extends Component {
           </div>
           <div className="icons">
             <div className="react">
-              <DiReact size={"100%"} color="skyblue" />
+              <DiReact size={'100%'} color="skyblue" />
             </div>
             <div className="react">
-              <DiNodejsSmall size={"100%"} color="yellowgreen" />
+              <DiNodejsSmall size={'100%'} color="yellowgreen" />
             </div>
             <div className="react">
-              <DiJavascript1 size={"100%"} color="yellow" />
+              <DiJavascript1 size={'100%'} color="yellow" />
             </div>
             <div className="react">
-              <DiMongodb size={"100%"} color="yellowgreen" />
+              <DiMongodb size={'100%'} color="yellowgreen" />
             </div>
 
             {/* <DiPython size={100} color="" /> */}
@@ -124,6 +124,10 @@ const MiddleContainer = styled.div`
       color: black;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       margin-left: 15px;
+      h3{
+      margin: 15px 0 0 15px;
+      text-align: center
+      }
       .briefInfo {
         width: 95%;
         margin: 0 0 0 15px;

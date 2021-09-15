@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
-import "../App.css";
-import About from "../Pages/Screens/About";
-import Skills from "../Pages/Screens/Skills";
-import Portfolio from "../Pages/Screens/Portfolio";
-import Contact from "../Pages/Screens/Contact";
-import Banner from "./Banner";
+import '../App.css';
+import About from '../Pages/About';
+import Skills from '../Pages/Skills';
+import Portfolio from '../Pages/Portfolio';
+import Contact from '../Pages/Contact';
+import Banner from './Banner';
 
 export default class Home extends Component {
   render() {
