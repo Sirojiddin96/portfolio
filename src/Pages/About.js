@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import image from '../../assets/image.jpg';
+import image from '../assets/image.jpg';
 import { AiFillGithub, AiFillMessage } from 'react-icons/ai';
 import { AiFillFacebook } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
