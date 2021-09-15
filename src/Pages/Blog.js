@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from 'react';
 
-export default class Blog extends Component {
-  render() {
-    return <div>Blog</div>;
-  }
-}
+const Blog = () => {
+  return <div>Hello</div>;
+};
+
+export default Blog;

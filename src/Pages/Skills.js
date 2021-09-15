@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import { DiReact } from "react-icons/di";
-import { DiNodejsSmall } from "react-icons/di";
-import { DiJavascript1 } from "react-icons/di";
-import { AiFillSetting } from "react-icons/ai";
-import { GrTools } from "react-icons/gr";
-import { BsTools } from "react-icons/bs";
-import { DiMongodb } from "react-icons/di";
+import React, { Component } from 'react';
+import { DiReact } from 'react-icons/di';
+import { DiNodejsSmall } from 'react-icons/di';
+import { DiJavascript1 } from 'react-icons/di';
+import { AiFillSetting } from 'react-icons/ai';
+import { GrTools } from 'react-icons/gr';
+import { BsTools } from 'react-icons/bs';
+import { DiMongodb } from 'react-icons/di';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export default class Skills extends Component {
   render() {
@@ -15,9 +15,9 @@ export default class Skills extends Component {
       <SkillContainer primary>
         <h2
           style={{
-            fontStyle: "inherit",
+            fontStyle: 'inherit',
             fontWeight: 500,
-            fontFamily: "Arial, Helvetica, sans-serif",
+            fontFamily: 'Arial, Helvetica, sans-serif',
           }}
         >
           Experiences
@@ -27,9 +27,10 @@ export default class Skills extends Component {
           <div className="box-container">
             <div className="box">
               <DiReact size={100} color="skyblue" />
+              <span>ReactJS and React Native</span>
               <p className="text">
-                Component-based structure and life cycle methods of this
-                framework make it my favourite front-end tool.
+                Component-based structure and life cycle methods of this library
+                make it my favourite front-end tool.
                 <BsTools size={25} />
               </p>
             </div>
@@ -37,6 +38,7 @@ export default class Skills extends Component {
           <div className="box-container">
             <div className="box">
               <DiNodejsSmall size={100} color="yellowgreen" />
+              <span>NodeJS</span>
               <p className="text">
                 Nodejs is one of my favourite backend tools to work with and npm
                 is best package management tool.
@@ -47,10 +49,10 @@ export default class Skills extends Component {
           <div className="box-container">
             <div className="box">
               <DiJavascript1 size={100} color="yellow" />
-
+              <span>Javascript</span>
               <p className="text">
                 Familiar with the latest updates on the language as well as
-                hands-on experience with ES6, ES7 and ES8.
+                hands-on experience with ES6.
                 <AiFillSetting size={25} />
               </p>
             </div>
@@ -58,10 +60,10 @@ export default class Skills extends Component {
           <div className="box-container">
             <div className="box">
               <DiMongodb color="yellowgreen" size={100} />
-
+              <span>MongoDB</span>
               <p className="text">
-                Familiar with the latest updates on the language as well as
-                hands-on experience with ES6, ES7 and ES8.
+                Flexibale and scalable DB structure is my best choice as it is
+                always.
                 <AiFillSetting size={25} />
               </p>
             </div>
@@ -92,7 +94,7 @@ const SkillContainer = styled.div`
     }
     .box-container {
       width: 24%;
-      height: 270px;
+      height: 220px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;

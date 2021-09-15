@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import image from '../assets/image.jpg';
+import image from '../assets/photo.jpg';
 import { AiFillGithub, AiFillMessage } from 'react-icons/ai';
 import { AiFillFacebook } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
@@ -58,8 +58,8 @@ export default class About extends Component {
           <div className="briefInfo">
             <p className="description">
               Nowadays, I am working for a software company which outsources
-              projects. Current project we are working on is Online Golf Retail
-              tools website. I am the front-end developer for this online store.
+              projects. Current project we are working on is Admin Dashboard for
+              management of data. I am VueJS developer in this project.
               <MdCardTravel size={20} color="skyblue" />
             </p>
           </div>

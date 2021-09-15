@@ -1,16 +1,17 @@
-import React, { Component } from "react";
-import { MdYoutubeSearchedFor } from "react-icons/md";
-import { AiFillApi } from "react-icons/ai";
-import { FaSalesforce } from "react-icons/fa";
-import { MdDirectionsRailway } from "react-icons/md";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import { MdYoutubeSearchedFor } from 'react-icons/md';
+import { AiFillApi } from 'react-icons/ai';
+import { FaSalesforce } from 'react-icons/fa';
+import { MdDirectionsRailway } from 'react-icons/md';
+import styled from 'styled-components';
 export default class Portfolio extends Component {
   render() {
     return (
       <PortfolioContainer>
         <h2
           style={{
-            fontStyle: "inherit",
+            fontStyle: 'inherit',
             fontWeight: 500,
             fontFamily: '"Palatino Linotype", "Book Antiqua", Palatino, serif',
           }}
@@ -19,22 +20,22 @@ export default class Portfolio extends Component {
         </h2>
         <hr width="70%" />
         <div className="skill-box-container">
-          <div className="box-container">
+          <Link className="box-container" to="/details">
             <MdDirectionsRailway
               size={100}
               color="skyblue"
-              style={{ marginTop: "30px" }}
+              style={{ marginTop: '30px' }}
             />
             <div className="container">
               <p>Rail</p>
               <a href="https://github.com/Sirojiddin96/rail">Code</a>
             </div>
-          </div>
+          </Link>
           <div className="box-container">
             <MdYoutubeSearchedFor
               size={100}
               color="yellowgreen"
-              style={{ marginTop: "30px" }}
+              style={{ marginTop: '30px' }}
             />
             <div className="container">
               <p>Search Engine</p>
@@ -45,7 +46,7 @@ export default class Portfolio extends Component {
             <FaSalesforce
               size={100}
               color="yellow"
-              style={{ marginTop: "30px" }}
+              style={{ marginTop: '30px' }}
             />
             <div className="container">
               <p>Sale App</p>
@@ -58,7 +59,7 @@ export default class Portfolio extends Component {
             <AiFillApi
               size={100}
               color="yellow"
-              style={{ marginTop: "30px" }}
+              style={{ marginTop: '30px' }}
             />
             <div className="container">
               <p>Axios Api</p>
