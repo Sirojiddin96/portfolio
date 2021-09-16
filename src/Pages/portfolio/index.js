@@ -6,24 +6,29 @@ import { projects } from './data';
 const Portfolio = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [works, setWorks] = useState([]);
+  const [single, setSingle] = useState('');
 
   const getAllProject = async () => {
     const resp = await projects;
     setWorks(resp);
-  };
-  const openModal = () => {
-    setIsVisible((prevState) => !prevState);
   };
 
   useEffect(() => {
     getAllProject();
   }, [works]);
 
+  const openModal = (id) => {
+    const singleProject = works.find((work) => work.id === id);
+    setSingle(singleProject);
+    console.log('Single', single);
+    // setIsVisible((prevState) => !prevState);
+  };
   return (
     <>
       {isVisible ? (
         <OverLay onClick={openModal} className="overlay">
           <div className="inner-container">
+            <span>{single}sdgsd</span>
             It is about Language Learning app which user can get 20 words daily
           </div>
         </OverLay>
@@ -41,7 +46,7 @@ const Portfolio = () => {
                   <div
                     className="box-container"
                     key={work.id}
-                    onClick={openModal}
+                    onClick={() => openModal(work.id)}
                   >
                     <div>{work.icon}</div>
                     <div className="container">
