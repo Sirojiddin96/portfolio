@@ -12,5 +12,5 @@ const Wrapper = styled.div`
   // max-width: 1280px;
   height: auto;
   margin: auto;
-  background-color: #e5e5e5;
+  // background-color: #e5e5e5;
 `;
