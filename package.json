@@ -13,6 +13,7 @@
     "@types/react-dom": "17.0.9",
     "@types/styled-components": "5.1.14",
     "axios": "^0.19.2",
+    "emailjs-com": "3.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^3.10.0",

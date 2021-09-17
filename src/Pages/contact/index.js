@@ -1,125 +1,94 @@
-import React, { Component } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
-import axios from 'axios';
 import Home from '../home';
+import apiKey from './emailKey';
+import emailjs from 'emailjs-com';
 
-export default class Contact extends Component {
-  state = {
-    name: '',
-    message: '',
-    email: '',
-    sent: false,
-    contactNumber: '',
-    buttonText: 'Send Message',
-  };
-  formSubmit = (e) => {
+const Contact = () => {
+  const form = useRef();
+  console.log(form);
+  const formSubmit = (e) => {
     e.preventDefault();
-    this.setState({
-      buttonText: '...sending',
-    });
-    let data = {
-      name: this.state.name,
-      email: this.state.email,
-      message: this.state.message,
-      contactNumber: this.state.contactNumber,
-    };
-    console.log(data);
-
-    axios
-      .post('/contact', data)
-      .then((data) => {
-        this.setState({ sent: true }, data, this.resetForm());
-      })
-      .catch((error) => {
-        console.log('Message not sent', error);
-      });
+    emailjs
+      .sendForm(
+        apiKey.SERVICE_ID,
+        apiKey.TEMPLATE_ID,
+        form.current,
+        apiKey.USER_ID
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert('Message Sent, We will get back to you shortly', result.text);
+        },
+        (error) => {
+          console.log('Error', error);
+          alert('An error occurred, Please try again', error);
+        }
+      );
   };
-  resetForm = () => {
-    this.setState({
-      name: '',
-      message: '',
-      email: '',
-      contactNumber: '',
-      buttonText: 'Message Sent',
-    });
-  };
-  render() {
-    return (
-      <Home>
-        <ContactContainer className="contact">
-          <div className="header-container">
-            <h1>Contact</h1>
-            <p className="header-paragraph">
-              Feel free to contact me in case of project or work suggestions
-            </p>
-          </div>
-          <div className="message-form-container">
-            <form className="message-form" onSubmit={(e) => this.formSubmit(e)}>
-              <FormContainer>
-                <div className="message-left-container">
-                  <Label>
-                    <input
-                      placeholder="Your name please"
-                      type="name"
-                      ref="name"
-                      onChange={(e) => this.setState({ name: e.target.value })}
-                      required
-                      value={this.state.name}
-                    />
-                  </Label>
-                  <Label>
-                    <input
-                      type="email"
-                      ref="email"
-                      size="30"
-                      placeholder="Your email please"
-                      onChange={(e) => this.setState({ email: e.target.value })}
-                      required
-                      value={this.state.email}
-                    />
-                  </Label>
-                  <Label>
-                    <input
-                      type="number"
-                      ref="number"
-                      placeholder="Your phone number please"
-                      onChange={(e) =>
-                        this.setState({ contactNumber: e.target.value })
-                      }
-                      required
-                      value={this.state.contactNumber}
-                    />
-                  </Label>
-                </div>
-                <div className="message-right-container">
-                  <Label>
-                    <textarea
-                      style={{ width: '100%', height: '180px' }}
-                      type="text"
-                      ref="text"
-                      placeholder="Enter your message here"
-                      onChange={(e) =>
-                        this.setState({ message: e.target.value })
-                      }
-                      required
-                      value={this.state.message}
-                    />
-                  </Label>
-                </div>
-              </FormContainer>
-              <div className="button-container">
-                <button onSubmit={(e) => this.formSubmit(e)}>
-                  {' '}
-                  {this.state.buttonText}
-                </button>
+  return (
+    <Home>
+      <ContactContainer className="contact">
+        <div className="header-container">
+          <h1>Contact</h1>
+          <p className="header-paragraph">
+            Feel free to contact me in case of project or work suggestions
+          </p>
+        </div>
+        <div className="message-form-container">
+          <form className="message-form" ref={form} onSubmit={formSubmit}>
+            <FormContainer>
+              <div className="message-left-container">
+                <Label>
+                  <input
+                    placeholder="Your name please"
+                    type="text"
+                    name="name"
+                    required
+                  />
+                </Label>
+                <Label>
+                  <input
+                    type="email"
+                    size="30"
+                    name="email"
+                    placeholder="Your email please"
+                    required
+                  />
+                </Label>
+                <Label>
+                  <input
+                    type="number"
+                    name="number"
+                    placeholder="Your phone number please"
+                    required
+                  />
+                </Label>
               </div>
-            </form>
-          </div>
-        </ContactContainer>
-      </Home>
-    );
-  }
-}
+              <div className="message-right-container">
+                <Label>
+                  <textarea
+                    style={{ width: '100%', height: '180px' }}
+                    type="text"
+                    name="message"
+                    placeholder="Enter your message here"
+                    required
+                  />
+                </Label>
+              </div>
+            </FormContainer>
+            <div className="button-container">
+              <button onSubmit={(e) => formSubmit(e)}>Send</button>
+            </div>
+          </form>
+        </div>
+      </ContactContainer>
+    </Home>
+  );
+};
+
+export default Contact;
 
 const ContactContainer = styled.div`
   width: 100%;
