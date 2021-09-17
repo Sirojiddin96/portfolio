@@ -1,10 +1,12 @@
 import React, { useRef } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import Home from '../home';
 import apiKey from './emailKey';
 import emailjs from 'emailjs-com';
 
 const Contact = () => {
+  const history = useHistory();
   const form = useRef();
   console.log(form);
   const formSubmit = (e) => {
@@ -19,13 +21,16 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
-          alert('Message Sent, We will get back to you shortly', result.text);
+          if (result.text === 'OK') {
+            history.push('/');
+          }
         },
         (error) => {
           console.log('Error', error);
           alert('An error occurred, Please try again', error);
         }
       );
+    form.current = '';
   };
   return (
     <Home>
