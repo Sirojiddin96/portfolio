@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Details from './Pages/Details/index';
 import Portfolio from './Pages/portfolio/index';
 import Main from './components/Main';
-import Skills from './Pages/skills';
+import Skills from './Pages/skills/index.tsx';
 import Contact from './Pages/contact';
 import Blog from './Pages/blog';
 
