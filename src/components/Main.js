@@ -59,6 +59,12 @@ const Wrapper = styled.div`
   padding-top: 10px;
   box-sizing: border-box;
   background-color: #e5e5e5;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+  }
+  @media (max-width: 700px) {
+    width: 100%;
+  }
 `;
 
 const LeftContainer = styled.div`
@@ -67,10 +73,17 @@ const LeftContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  @media (max-width: 700px) {
+    padding-top: 100px;
+  }
   span {
     color: #14213d;
     font-weight: 600;
     font-size: 20px;
+    @media (max-width: 700px) {
+      font-weight: 600;
+      font-size: 15px;
+    }
   }
   .name {
     margin-top: 10px;
@@ -80,6 +93,10 @@ const LeftContainer = styled.div`
       font-weight: 600;
       font-family: sans-serif;
       color: #001d3d;
+      @media (max-width: 700px) {
+        font-weight: 600;
+        font-size: 15px;
+      }
     }
   }
   .intro {
@@ -89,11 +106,19 @@ const LeftContainer = styled.div`
     font-weight: 600;
     font-size: large;
     font-family: sans-serif;
+    @media (max-width: 700px) {
+      width: 200px;
+      font-size: small;
+    }
   }
   .buttons {
     display: flex;
     justify-content: flex-start;
     margin-top: 20px;
+    @media (max-width: 700px) {
+      justify-content: center;
+      flex-direction: column;
+    }
     .left {
       width: 130px;
       height: 40px;
@@ -118,6 +143,10 @@ const LeftContainer = styled.div`
       border: 1px solid #ccc;
       color: #001d3d;
       font-weight: 600;
+      @media (max-width: 700px) {
+        margin-left: 0px;
+        margin-top: 10px;
+      }
     }
   }
 `;
@@ -135,6 +164,17 @@ const RightContainer = styled.div`
     height: 200px;
     position: absolute;
     margin-top: 100px;
+    @media (max-width: 1000px) {
+      width: 300px;
+      height: 100px;
+      margin-top: 10px;
+      flex-direction: column;
+    }
+    @media (max-width: 700px) {
+      width: 200px;
+      height: 100px;
+      position: relative;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -152,6 +192,20 @@ const RightContainer = styled.div`
       // transform: rotate(-15deg);
       margin-top: -130px;
       transform: skewX(20deg);
+      @media (max-width: 1000px) {
+        width: 200px;
+        height: 100px;
+      }
+      @media (max-width: 700px) {
+        width: 100px;
+        height: 100px;
+        margin-top: 10px;
+        flex-direction: column;
+      }
+      @media (max-width: 400px) {
+        flex-direction: column;
+        transform: skewX(0deg);
+      }
       img {
         width: 100%;
         height: 100%;

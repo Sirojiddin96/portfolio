@@ -18,6 +18,11 @@ export default class Header extends Component {
             {/* <Link to="/blog">Blog</Link> */}
             <Link to="/contact">Contact</Link>
           </div>
+          <div className="mobile-header">
+            <div className="image">
+              <img src={require('../assets/ic_menu.png')} alt="hamburger" />
+            </div>
+          </div>
         </div>
       </Wrapper>
     );
@@ -37,6 +42,7 @@ const Wrapper = styled.div`
   @media (max-width: 768px) {
     width: 100%;
     flex-direction: row;
+    justify-content: space-between;
   }
   .main {
     width: 95%;
@@ -45,6 +51,21 @@ const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     /* border: 1px solid gray; */
+    .mobile-header {
+      display: none;
+
+      @media (max-width: 768px) {
+        display: flex;
+        .image {
+          width: 40px;
+          height: 40px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
   }
   .header-left {
     width: 40%;
@@ -56,8 +77,7 @@ const Wrapper = styled.div`
       color: #3b0062;
     }
     @media (max-width: 768px) {
-      width: 100%;
-      text-align: center;
+      padding-left: 20px;
     }
   }
   .header-right {
