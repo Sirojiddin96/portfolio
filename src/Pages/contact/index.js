@@ -34,7 +34,7 @@ const Contact = () => {
   };
   return (
     <Home>
-      <ContactContainer className="contact">
+      <ContactContainer>
         <div className="header-container">
           <h1>Contact</h1>
           <p className="header-paragraph">
@@ -101,8 +101,10 @@ const ContactContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #92a8d1;
+  background-color: white;
   padding-bottom: 30px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
   @media (max-width: 768px) {
     width: 100%;
     flex-direction: column;
@@ -110,9 +112,9 @@ const ContactContainer = styled.div`
   .header-container {
     padding: 15px;
     text-align: center;
-    color: white;
+    color: #003249;
     font-size: 20px;
-    font-family: Arial;
+    font-family: sans-serif;
     @media (max-width: 768px) {
       width: 100%;
       font-size: 15px;
@@ -124,7 +126,7 @@ const ContactContainer = styled.div`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: rgba(108, 206, 168, 0.26);
     padding: 30px;
     .message-form {
       width: 100%;
@@ -156,8 +158,10 @@ const ContactContainer = styled.div`
           font-size: 17px;
           font-style: oblique;
           font-weight: 300;
-          background-color: #333333;
-          color: white;
+          background-color: white;
+          color: #003249;
+          border: none;
+          outline: none;
           @media (max-width: 768px) {
             width: 100%;
             flex-direction: row;
@@ -177,9 +181,11 @@ const ContactContainer = styled.div`
           padding: 10px;
           font-size: 17px;
           font-weight: 300;
-          background-color: #333333;
-          color: white;
+          background-color: white;
+          color: #003249;
           font-style: oblique;
+          border: none;
+          outline: none;
         }
       }
     }
@@ -192,11 +198,23 @@ const ContactContainer = styled.div`
       margin-top: 20px;
       background-color: white-space;
       button {
+        width: 14%;
         padding: 10px;
         font-family: Arial;
-        color: black;
+        color: white;
         font-size: 20px;
         cursor: pointer;
+        border: none;
+        background: #003249;
+        @media (max-width: 1000px) {
+          width: 30%;
+        }
+        @media (max-width: 700px) {
+          width: 30%;
+        }
+        @media (max-width: 400px) {
+          width: 30%;
+        }
       }
       button:hover {
         background-color: #92a8d1;
@@ -214,7 +232,7 @@ const Label = styled.div`
   justify-content: space-around;
 `;
 const FormContainer = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: row;
   justify-content: center;

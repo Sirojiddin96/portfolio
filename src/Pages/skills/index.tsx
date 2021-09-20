@@ -102,6 +102,7 @@ const SkillBox = styled.div`
   align-items: center;
   flex-wrap: wrap;
   margin-top: 20px;
+  box-sizing: border-box;
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -113,12 +114,15 @@ const SkillBox = styled.div`
     justify-content: space-between;
     align-items: center;
     border: 1px solid lightgray;
-    /* box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
-      0 6px 10px 0 hsla(0, 0%, 0%, 0.19); */
     margin-top: 8px;
     opacity: 0.8;
-    background-color: #c7f9cc;
+    background-color: rgba(108, 206, 168, 0.26);
     //  animation: animateId 0.3s ease-out forwards;
+    @media (max-width: 1000px) {
+      width: 48%;
+      margin-top: 15px;
+      flex-direction: column;
+    }
     @media (max-width: 768px) {
       width: 80%;
       margin-top: 15px;
@@ -156,12 +160,16 @@ const SkillBox = styled.div`
         box-sizing: border-box;
         align-items: flex-start;
         padding: 0 10px;
+        margin-bottom: 20px;
         .context {
           display: flex;
           flex-direction: column;
           box-sizing: border-box;
           align-items: flex-start;
           padding: 5px 10px;
+          li {
+            font-weight: 600;
+          }
           span {
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial,
               sans-serif;
@@ -184,7 +192,7 @@ const SkillBox = styled.div`
           padding: 0;
         }
         span {
-          font-weight: 500;
+          font-weight: 600;
           //color: #0b222567;
         }
       }
@@ -194,6 +202,7 @@ const SkillBox = styled.div`
         text-align: center;
         padding: 5px;
         font-weight: 600;
+        margin-top: 15px;
       }
     }
   }

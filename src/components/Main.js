@@ -1,56 +1,109 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 import '../App.css';
 import Home from '../Pages/home';
-const Main = (porps) => {
+import ContactForm from './ContactForm';
+
+import emailjs from 'emailjs-com';
+import apiKey from '../Pages/contact/emailKey';
+
+const Main = () => {
+  const form = useRef();
   const history = useHistory();
+  const [openContact, setOpenContact] = useState(false);
 
   const goToPortfolio = () => {
     history.push('/portfolio');
   };
+  const openContactForm = () => {
+    setOpenContact((prevState) => !prevState);
+  };
+
+  const submitFormHander = (event) => {
+    event.preventDefault();
+    emailjs
+      .sendForm(
+        apiKey.SERVICE_ID,
+        apiKey.TEMPLATE_ID,
+        form.current,
+        apiKey.USER_ID
+      )
+      .then(
+        (result) => {
+          console.log(result);
+          if (result.text === 'OK') {
+            setOpenContact((prevState) => !prevState);
+          }
+        },
+        (error) => {
+          console.log('Error', error);
+          alert('An error occurred, Please try again', error);
+        }
+      );
+  };
+
   return (
-    <Home>
-      <Wrapper>
-        <LeftContainer>
-          <span>Try Every Single Chance</span>
-          <div className="name">
-            <h1>I am Developer</h1>
-            <h1>Sirojiddin Karimov</h1>
-          </div>
-          <div className="intro">
-            Fully-passionate about coding and problem solving in programming
-            area. Always eager to chase new challenges
-          </div>
-          <div className="buttons">
-            <button className="left" onClick={goToPortfolio}>
-              Learn more
-            </button>
-            <button className="right">Hire Me</button>
-          </div>
-        </LeftContainer>
-        <RightContainer>
-          <div className="image__row">
-            <div className="below__image">
-              <img src={require('../assets/second.jpeg')} alt="main__first" />
+    <>
+      {openContact && (
+        <Contact>
+          <ContactForm
+            header="Reach me out"
+            onSubmit={submitFormHander}
+            form={form}
+            cancel={openContactForm}
+          />
+        </Contact>
+      )}
+      <Home>
+        <Wrapper>
+          <LeftContainer>
+            <span>Try Every Single Chance</span>
+            <div className="name">
+              <h1>I am Developer</h1>
+              <h1>Sirojiddin Karimov</h1>
             </div>
-            <div className="below__image">
-              <img src={require('../assets/third.jpeg')} alt="main__second" />
+            <div className="intro">
+              Fully-passionate about coding and problem solving in programming
+              area. Always eager to chase new challenges
             </div>
-          </div>
-          <div className="image">
-            <img src={require('../assets/first.jpeg')} alt="main__second" />
-          </div>
-        </RightContainer>
-      </Wrapper>
-    </Home>
+            <div className="buttons">
+              <button className="left" onClick={goToPortfolio}>
+                Learn more
+              </button>
+              <button className="right" onClick={openContactForm}>
+                Hire Me
+              </button>
+            </div>
+          </LeftContainer>
+          <RightContainer>
+            <div className="image">
+              <img src={require('../assets/personal.jpg')} alt="main__second" />
+            </div>
+            <span className="title">Are you looking for a developer?</span>
+          </RightContainer>
+        </Wrapper>
+      </Home>
+    </>
   );
 };
 export default Main;
-const Wrapper = styled.div`
+
+const Contact = styled.div`
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: 1;
+`;
+
+const Wrapper = styled.div`
+  width: 100%;
+  height: 90vh;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -73,8 +126,18 @@ const LeftContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  @media (max-width: 1000px) {
+    width: 70%;
+    margin-bottom: 20px;
+  }
   @media (max-width: 700px) {
-    padding-top: 100px;
+    width: 50%;
+    align-items: center;
+    padding-top: 50px;
+  }
+  @media (max-width: 400px) {
+    width: 100%;
+    align-items: center;
   }
   span {
     color: #14213d;
@@ -152,27 +215,27 @@ const LeftContainer = styled.div`
 `;
 const RightContainer = styled.div`
   width: 50%;
-  height: 500px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  // position: relative;
-
   .image {
     width: 500px;
-    height: 200px;
-    position: absolute;
-    margin-top: 100px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     @media (max-width: 1000px) {
-      width: 300px;
-      height: 100px;
+      width: 500px;
+      height: 400px;
       margin-top: 10px;
       flex-direction: column;
     }
     @media (max-width: 700px) {
-      width: 200px;
-      height: 100px;
+      width: 400px;
+      height: 330px;
+      position: relative;
+    }
+    @media (max-width: 400px) {
+      width: 300px;
+      height: 230px;
       position: relative;
     }
     img {
@@ -180,35 +243,35 @@ const RightContainer = styled.div`
       height: 100%;
     }
   }
-  .image__row {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    z-index: 1;
-    .below__image {
-      width: 300px;
-      height: 200px;
-      // transform: rotate(-15deg);
-      margin-top: -130px;
-      transform: skewX(20deg);
-      @media (max-width: 1000px) {
-        width: 200px;
-        height: 100px;
-      }
-      @media (max-width: 700px) {
-        width: 100px;
-        height: 100px;
-        margin-top: 10px;
-        flex-direction: column;
-      }
-      @media (max-width: 400px) {
-        flex-direction: column;
-        transform: skewX(0deg);
-      }
-      img {
-        width: 100%;
-        height: 100%;
+  .title {
+    position: absolute;
+    background: white;
+    margin-top: 420px;
+    margin-left: -170px;
+    font-family: monospace;
+    font-size: 15px;
+    padding: 6px 8px;
+    animation: title 3s ease-out;
+    @media (max-width: 1000px) {
+      margin-top: 360px;
+      font-size: 14px;
+    }
+    @media (max-width: 700px) {
+      margin-top: 290px;
+      font-size: 12px;
+      margin-left: -140px;
+      padding: 4px 5px;
+    }
+    @media (max-width: 400px) {
+      margin-top: 190px;
+      font-size: 10px;
+      padding: 3px 4px;
+      margin-left: -70px;
+    }
+    @keyframes title {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
       }
     }
   }
