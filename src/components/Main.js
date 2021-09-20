@@ -132,12 +132,12 @@ const LeftContainer = styled.div`
   }
   @media (max-width: 700px) {
     width: 50%;
-    align-items: center;
+    align-items: flex-start;
     padding-top: 50px;
   }
   @media (max-width: 400px) {
     width: 100%;
-    align-items: center;
+    align-items: flex-start;
   }
   span {
     color: #14213d;
