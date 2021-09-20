@@ -33,7 +33,7 @@ const Content = () => {
           >
             <h1>Name: Language Learning App</h1>
             <span style={{ fontSize: 'medium', marginBottom: 15 }}>
-              Status: on-going
+              Status:Finished
             </span>
           </div>
           <p>

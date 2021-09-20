@@ -19,18 +19,16 @@ const Content = () => {
               justifyContent: 'flex-start',
             }}
           >
-            <h1>Name: Language Learning App</h1>
+            <h1>Name: Golfzon Retail Market</h1>
             <span style={{ fontSize: 'medium', marginBottom: 15 }}>
-              Status: on-going
+              Status: Finished
             </span>
           </div>
           <p>
-            WellFamily house is the mobile app project which is used between
-            family members to communicate and control the health of old people
-            in the Family. App contains: Family section, Health Check-up test,
-            Health Exercises, Memory test game, Creating and communicating with
-            Members, and many more. I would like to describe it in detail in
-            Person
+            Golfzon Retail webapp and website which are built using Vue.JS, I
+            was assistant developer who contributed alot of work for this
+            project.You can sell and buy what you are not using in golf tools,
+            you can not sell things rather than golf tools
           </p>
         </div>
       </div>

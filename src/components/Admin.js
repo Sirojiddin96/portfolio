@@ -25,12 +25,10 @@ const Content = () => {
             </span>
           </div>
           <p>
-            WellFamily house is the mobile app project which is used between
-            family members to communicate and control the health of old people
-            in the Family. App contains: Family section, Health Check-up test,
-            Health Exercises, Memory test game, Creating and communicating with
-            Members, and many more. I would like to describe it in detail in
-            Person
+            Hanhwa Total Admin Dashboard is the website which works for showing
+            data which comes from Big data. What I did in this project mainly
+            was architecturing project fundament, and guiding to co-workers,
+            Written in Vue.JS
           </p>
         </div>
       </div>
