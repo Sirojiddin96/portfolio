@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Home from '../home';
 import apiKey from './emailKey';
 import emailjs from 'emailjs-com';
+import MainScreen from '../../layout/MainScreen';
 
 const Contact = () => {
   const history = useHistory();
@@ -33,7 +34,7 @@ const Contact = () => {
     form.current = '';
   };
   return (
-    <Home>
+    <MainScreen>
       <ContactContainer>
         <div className="header-container">
           <h1>Contact</h1>
@@ -89,7 +90,7 @@ const Contact = () => {
           </form>
         </div>
       </ContactContainer>
-    </Home>
+    </MainScreen>
   );
 };
 

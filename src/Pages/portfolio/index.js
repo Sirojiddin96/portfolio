@@ -8,6 +8,7 @@ import Content from '../../components/Content';
 import WellFamily from '../../components/WellFamily';
 import Golfzon from '../../components/Golzon';
 import Admin from '../../components/Admin';
+import MainScreen from '../../layout/MainScreen';
 
 const Portfolio = () => {
   const [works, setWorks] = useState([]);
@@ -22,7 +23,7 @@ const Portfolio = () => {
   }, [works]);
 
   return (
-    <Home>
+    <MainScreen>
       <Wrapper>
         <PortfolioContainer>
           <h1>What I have done so far...</h1>
@@ -43,7 +44,7 @@ const Portfolio = () => {
           </div>
         </PortfolioContainer>
       </Wrapper>
-    </Home>
+    </MainScreen>
   );
 };
 export default Portfolio;

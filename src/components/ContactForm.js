@@ -24,7 +24,7 @@ const ContactForm = (props) => {
         <div className="input-card">
           <Label>Phone:</Label>
           <input
-            type="number"
+            type="text"
             placeholder="Please enter your number"
             name="number"
           />
@@ -49,7 +49,7 @@ const ContactForm = (props) => {
 export default ContactForm;
 
 const Wrapper = styled.div`
-  width: 30%;
+  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;

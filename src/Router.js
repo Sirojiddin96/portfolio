@@ -2,8 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Details from './Pages/Details/index';
 import Portfolio from './Pages/portfolio/index';
-import Main from './components/Main';
-import Skills from './Pages/skills/index.tsx';
+import Main from './Pages/home/index';
+import Skills from './Pages/skills';
 import Contact from './Pages/contact';
 import Blog from './Pages/blog';
 

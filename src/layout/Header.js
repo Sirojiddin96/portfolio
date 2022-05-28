@@ -24,21 +24,17 @@ const Header = () => {
     <Wrapper>
       <div className="main">
         <div className="header-left">
-          <Link to="portfolio">Portfolio</Link>
+          <Link to="portfolio">Home</Link>
         </div>
         <div className="header-right">
-          <Link to="/">Home</Link>
-          <Link to="/skills">Skills</Link>
           <Link to="/portfolio">Portfolio</Link>
-          {/* <Link to="/blog">Blog</Link> */}
-          <Link to="/contact">Contact</Link>
+          <button className="contact__button">Contact</button>
         </div>
         <div className="mobile-header">
           <div className="image" onClick={openSideBar}>
             <img src={require('../assets/ic_menu.png')} alt="hamburger" />
           </div>
         </div>
-
         <MobileRight isOpen={isOpen}>
           {Links.map((link) => {
             return (
@@ -99,15 +95,12 @@ const MobileRight = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 45px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
-  // box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-bottom: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   @media (max-width: 768px) {
     width: 100%;
     flex-direction: row;
@@ -141,9 +134,13 @@ const Wrapper = styled.div`
     color: white;
     font-weight: bold;
     padding: 5px 0 5px 0;
+    padding-left:40px;
+    box-sizing:border-box;
     a {
       text-decoration: none;
-      color: #3b0062;
+      color: #BDEBEA;
+      font-size:20px;
+      font-weight:600px;
     }
     @media (max-width: 768px) {
       padding-left: 20px;
@@ -155,15 +152,35 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
-    border: 1px solid white;
-    color: white;
+    align-items: center
     font-weight: bold;
-    padding: 10px 0 10px 0;
     cursor: pointer;
+    box-sizing:border-box;
     a {
       text-decoration: none;
-      color: #3b0062;
+      color: #BDEBEA;
+      font-size:20px;
+      font-weight:bold;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      box-sizing:border-box;
+      padding: 12px 20px 13px;
+      gap: 10px;
+    }
+    .contact__button{
+      background: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
+      border-radius: 6px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      box-sizing:border-box;
+      padding: 12px 20px 13px;
+      gap: 10px;
+      border:none;
+      color: #252728;
     }
     @media (max-width: 768px) {
       display: none;

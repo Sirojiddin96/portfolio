@@ -13,6 +13,7 @@ import {
 } from 'react-icons/fa';
 
 import star from './stars';
+import MainScreen from '../../layout/MainScreen';
 
 const icons = [
   <DiReact size={100} color="#61DBFB" />,
@@ -28,7 +29,7 @@ const icons = [
 
 const Skills = () => {
   return (
-    <Home>
+    <MainScreen>
       <Content>
         <h2>Experiences</h2>
         <SkillBox>
@@ -58,7 +59,7 @@ const Skills = () => {
           })}
         </SkillBox>
       </Content>
-    </Home>
+    </MainScreen>
   );
 };
 

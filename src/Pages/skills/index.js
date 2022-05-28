@@ -8,11 +8,11 @@ import { BsTools } from 'react-icons/bs';
 import { DiMongodb } from 'react-icons/di';
 
 import styled from 'styled-components';
-import Home from '../home';
+import MainScreen from '../../layout/MainScreen';
 
 const Skills = () => {
   return (
-    <Home>
+    <MainScreen>
       <SkillContainer primary>
         <h2
           style={{
@@ -71,7 +71,7 @@ const Skills = () => {
           </div>
         </div>
       </SkillContainer>
-    </Home>
+    </MainScreen>
   );
 };
 

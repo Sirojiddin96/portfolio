@@ -1,16 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
+import Header from './Header';
 
 function MainScreen(props) {
-  return <Wrapper>{props.children}</Wrapper>;
+  return (
+    <Wrapper>
+      <Header />
+      {props.children}
+    </Wrapper>
+  );
 }
 
 export default MainScreen;
 
 const Wrapper = styled.div`
   width: 100%;
-  // max-width: 1280px;
-  height: auto;
-  margin: auto;
-  // background-color: #e5e5e5;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #041f31;
 `;
