@@ -1,10 +1,14 @@
 import React, { useState, useRef } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import ContactForm from '../../components/ContactForm';
 import emailjs from 'emailjs-com';
 import apiKey from '../contact/emailKey';
 import MainScreen from '../../layout/MainScreen';
+import Project from '../../components/Project';
+import Skill from '../../components/Skill';
+import SkillData from './skills';
+import ProjectData from './project';
 
 const Main = () => {
   const form = useRef();
@@ -80,6 +84,72 @@ const Main = () => {
               </div>
             </RightContainer>
           </IntroScreen>
+          <About>
+            <h2>About Me</h2>
+            <div className="text__container">
+              <p>
+                FrontEnd Web and Mobile developer who has full passion on
+                working with frontend softwares. I have been working for this
+                area for 2 years, spending time on mostly frontend part of
+                projects, however, I have familier knowledge of backend services
+                as well. I am a JS man who dedicates his most of time of
+                Javascript and its framework and libraries. I am always open to
+                discuss things, So, always feel free to contact me, Thank you.
+              </p>
+            </div>
+          </About>
+          <Projects>
+            <h2>Projects</h2>
+            <div className="projects">
+              {ProjectData.map((project) => {
+                return <Project key={project.id} project={project} />;
+              })}
+            </div>
+          </Projects>
+          <Skills>
+            <h2>Skills</h2>
+            <div className="personal__skills">
+              {SkillData.map((skill) => {
+                return (
+                  <Skill
+                    key={skill.id}
+                    js={skill.image}
+                    js_title={skill.name}
+                  />
+                );
+              })}
+            </div>
+          </Skills>
+          <ContactDiv>
+            <div className="contact__list">
+              <div className="account">
+                <img
+                  src={require('../../assets/contact/gmail.png')}
+                  alt="gmail"
+                />
+                <a href="">Gmail</a>
+              </div>
+              <div className="account">
+                <img src={require('../../assets/contact/in.png')} alt="in" />
+                <a
+                  href="https://www.linkedin.com/in/karimov-sirojiddin-930b65195/"
+                  target="_blank"
+                >
+                  LinkedIn
+                </a>
+              </div>
+              <div className="account">
+                <img
+                  src={require('../../assets/contact/github.png')}
+                  alt="git"
+                />
+                <a href="https://github.com/Sirojiddin96" target="_blank">
+                  Github
+                </a>
+              </div>
+            </div>
+            <Title>WEB DEVELOPER 2022</Title>
+          </ContactDiv>
         </Wrapper>
       </MainScreen>
     </>
@@ -101,13 +171,12 @@ const Contact = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
-  // height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: flex-start;
-  padding-top: 96px;
+  align-items: center;
+  padding-top: 76px;
   @media (max-width: 700px) {
     width: 100%;
   }
@@ -119,7 +188,125 @@ const IntroScreen = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  // padding-top: 50px;
+  // border: 1px solid white;
+`;
+
+const About = styled.div`
+  width: 90%;
+  margin-top: 30px;
+  h2 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    letter-spacing: 0.04em;
+    color: #bdebea;
+  }
+  .text__container {
+    width: 80%;
+    p {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 0.04em;
+      color: #bdebea;
+    }
+  }
+`;
+
+const Projects = styled.div`
+  width: 90%;
+  margin-top: 20px;
+  h2 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    letter-spacing: 0.04em;
+    color: #bdebea;
+  }
+  .projects {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+`;
+
+const Skills = styled.div`
+  width: 90%;
+  h2 {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 26px;
+    letter-spacing: 0.04em;
+    color: #bdebea;
+  }
+  .personal__skills {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+`;
+
+const ContactDiv = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  margin-bottom: 30px;
+  .contact__list {
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    .account {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 37px;
+        height: 37px;
+      }
+      a {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 11px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #bdebea;
+        text-decoration: none;
+        margin-top: 20px;
+      }
+    }
+  }
+`;
+
+const Title = styled.div`
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #bdebea;
+  margin-top: 30px;
 `;
 
 const LeftContainer = styled.div`
@@ -204,7 +391,7 @@ const LeftContainer = styled.div`
       justify-content: center;
       align-items: center;
       padding: 12px 20px 13px;
-      gap: 10p;
+      gap: 10px;
       border: none;
       @media (max-width: 700px) {
         margin-left: 0px;
