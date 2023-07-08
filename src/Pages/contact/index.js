@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import Home from '../home';
 import apiKey from './emailKey';
 import emailjs from 'emailjs-com';
 import MainScreen from '../../layout/MainScreen';
@@ -9,7 +8,6 @@ import MainScreen from '../../layout/MainScreen';
 const Contact = () => {
   const history = useHistory();
   const form = useRef();
-  console.log(form);
   const formSubmit = (e) => {
     e.preventDefault();
     emailjs
@@ -36,16 +34,11 @@ const Contact = () => {
   return (
     <MainScreen>
       <ContactContainer>
-        <div className="header-container">
-          <h1>Contact</h1>
-          <p className="header-paragraph">
-            Feel free to contact me in case of project or work suggestions
-          </p>
-        </div>
-        <div className="message-form-container">
-          <form className="message-form" ref={form} onSubmit={formSubmit}>
-            <FormContainer>
-              <div className="message-left-container">
+        <form className="message-form" ref={form} onSubmit={formSubmit}>
+          <FormContainer>
+            <div className="message-left-container">
+              <div className='input-box'>
+                <span>Name</span>
                 <Label>
                   <input
                     placeholder="Your name please"
@@ -54,6 +47,9 @@ const Contact = () => {
                     required
                   />
                 </Label>
+              </div>
+              <div className='input-box'>
+                <span>Email</span>
                 <Label>
                   <input
                     type="email"
@@ -63,32 +59,22 @@ const Contact = () => {
                     required
                   />
                 </Label>
-                <Label>
-                  <input
-                    type="number"
-                    name="number"
-                    placeholder="Your phone number please"
-                    required
-                  />
-                </Label>
               </div>
-              <div className="message-right-container">
-                <Label>
-                  <textarea
-                    style={{ width: '100%', height: '180px' }}
-                    type="text"
-                    name="message"
-                    placeholder="Enter your message here"
-                    required
-                  />
-                </Label>
-              </div>
-            </FormContainer>
-            <div className="button-container">
-              <button onSubmit={(e) => formSubmit(e)}>Send</button>
             </div>
-          </form>
-        </div>
+            <div className="message-right-container">
+              <span>Message</span>
+              <Label>
+                <textarea
+                  type="text"
+                  name="message"
+                  placeholder="Enter your message here"
+                  required
+                />
+              </Label>
+               <button onSubmit={(e) => formSubmit(e)}>Send</button>            
+            </div>
+          </FormContainer>
+        </form>
       </ContactContainer>
     </MainScreen>
   );
@@ -98,37 +84,18 @@ export default Contact;
 
 const ContactContainer = styled.div`
   width: 100%;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #041F31;
   padding-bottom: 30px;
   box-sizing: border-box;
-  border: 1px solid #ccc;
   @media (max-width: 768px) {
     width: 100%;
     flex-direction: column;
   }
-  .header-container {
-    padding: 15px;
-    text-align: center;
-    color: #003249;
-    font-size: 20px;
-    font-family: sans-serif;
-    @media (max-width: 768px) {
-      width: 100%;
-      font-size: 15px;
-    }
-  }
-  .message-form-container {
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    background-color: rgba(108, 206, 168, 0.26);
-    padding: 30px;
     .message-form {
       width: 100%;
       display: flex;
@@ -142,88 +109,94 @@ const ContactContainer = styled.div`
       }
       .message-left-container {
         width: 45%;
-        height: 200px;
         display: flex;
         flex-direction: column;
+        gap: 2.5rem;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 1.5rem;
         @media (max-width: 768px) {
           width: 100%;
           flex-direction: column;
           margin-bottom: 15px;
         }
-        input {
-          height: 25px;
-          width: 80%;
-          padding: 10px;
-          font-size: 17px;
-          font-style: oblique;
-          font-weight: 300;
-          background-color: white;
-          color: #003249;
-          border: none;
-          outline: none;
-          @media (max-width: 768px) {
-            width: 100%;
-            flex-direction: row;
+        .input-box{
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          gap: 0.6rem;
+          span{
+            color: #BDEBEA;
+            font-size: 1.4rem;
+            font-family: 'Montserrat';
           }
-        }
+          input {
+            width: 100%;
+            font-size: 1.4rem;
+            font-weight: 600;
+            background-color: transparent;
+            color: #919B9B;
+            border: none;
+            outline: none;
+            font-family: 'Montserrat';
+            @media (max-width: 768px) {
+              width: 100%;
+              flex-direction: row;
+            }
+          }
+      }
       }
       .message-right-container {
         width: 45%;
         display: flex;
-        height: 200px;
         flex-direction: column;
+        span{
+            color: #BDEBEA;
+            font-size: 1.4rem;
+            font-family: 'Montserrat';
+            margin-bottom: 1rem;
+          }
         @media (max-width: 768px) {
           width: 100%;
           flex-direction: row;
         }
         textarea {
+          width: 100%;
+          height: 10rem;
           padding: 10px;
           font-size: 17px;
-          font-weight: 300;
-          background-color: white;
-          color: #003249;
-          font-style: oblique;
+          font-weight: 600;
+          background-color: transparent;
+          color: #fff;
+          font-family: 'Montserrat';
           border: none;
           outline: none;
         }
+        
+          button {
+            width: 100%;
+            font-weight: 700;
+            padding: 1rem 0;
+            font-family: 'Montserrat';
+            color: #252728;
+            font-size: 1.6rem;
+            cursor: pointer;
+            border: none;
+            background: #00F5A0;
+            border-radius: 0.6rem;
+            margin-top: 2rem;
+            @media (max-width: 1000px) {
+              width: 30%;
+            }
+            @media (max-width: 700px) {
+              width: 30%;
+            }
+            @media (max-width: 400px) {
+              width: 30%;
+            }
+          }
       }
     }
-    .button-container {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      margin-top: 20px;
-      background-color: white-space;
-      button {
-        width: 14%;
-        padding: 10px;
-        font-family: Arial;
-        color: white;
-        font-size: 20px;
-        cursor: pointer;
-        border: none;
-        background: #003249;
-        @media (max-width: 1000px) {
-          width: 30%;
-        }
-        @media (max-width: 700px) {
-          width: 30%;
-        }
-        @media (max-width: 400px) {
-          width: 30%;
-        }
-      }
-      button:hover {
-        background-color: #92a8d1;
-        color: white;
-        border: 1px solid gray;
-      }
-    }
-  }
 `;
 const Label = styled.div`
   width: 100%;
@@ -231,11 +204,15 @@ const Label = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  border: 1px  solid #bdebea;
+  border-radius: 0.6rem;
+  padding: 1rem 1.8rem;
+  box-sizing: border-box;
 `;
 const FormContainer = styled.div`
   width: 80%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   @media (max-width: 768px) {

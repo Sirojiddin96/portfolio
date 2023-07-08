@@ -4,9 +4,9 @@ import styled from 'styled-components';
 const Project = (props) => {
   return (
     <ProjectContainer>
-      <div className="project__image">
+     {props.project?.image && <div className="project__image">
         <img src={props.project.image} alt="img" />
-      </div>
+      </div>}
       <div className="project__content">
         <h2>{props.project.name} </h2>
         <div className="project__tools">
@@ -16,10 +16,10 @@ const Project = (props) => {
         </div>
         <div className="project__definition">{props.project.description}</div>
         <div className="project__info">
-          <strong>Position:</strong> {props.project.position}
+          <strong>Position: </strong> {props.project.position}
         </div>
         <div className="project__info">
-          <strong>Duration:</strong> {props.project.length} Months
+          <strong>Duration: </strong> {props.project.length}
         </div>
         <div className="project__info">
           <strong>Techs: </strong>
@@ -27,6 +27,10 @@ const Project = (props) => {
             return <span key={skill}>{skill} </span>;
           })}
         </div>
+        {props.project.link && <div className="project__info">
+          <strong>Link: </strong>
+          <a href={props.project.link} target="_blank" rel="noopener noreferrer">{props.project.link}</a>
+        </div>}
       </div>
     </ProjectContainer>
   );
@@ -35,7 +39,7 @@ const Project = (props) => {
 export default Project;
 
 const ProjectContainer = styled.div`
-  width: 45%;
+  width:49%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -43,12 +47,17 @@ const ProjectContainer = styled.div`
   padding: 20px 0px;
   .project__image {
     width: 100%;
+    height: 26rem;
+    box-sizing: border-box;
     img {
       width: 100%;
+      height: 100%;
+      object-fit: fill;
     }
   }
   .project__content {
     width: 100%;
+    height: 23rem;
     display: flex;
     flex-direction: column;
     background: #222525;
@@ -58,8 +67,11 @@ const ProjectContainer = styled.div`
     border-bottom-left-radius: 6px;
     .project__tools {
       display: flex;
-      width: 60%;
-      justify-content: space-around;
+    // width: 60%;
+      justify-content: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
       flex-direction: row;
       span {
         background: linear-gradient(90deg, #00f5a0 0%, #00d9f5 100%);
@@ -91,7 +103,6 @@ const ProjectContainer = styled.div`
       box-sizing: border-box;
       padding: 10px 0px;
     }
-    ,
     .project__info {
       font-family: 'Montserrat';
       font-style: normal;
@@ -107,6 +118,9 @@ const ProjectContainer = styled.div`
         font-weight: 600;
         font-size: 16px;
         font-weight: bold;
+      }
+      a{
+        color: #00d9f5;
       }
     }
   }
