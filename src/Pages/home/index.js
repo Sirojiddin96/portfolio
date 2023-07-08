@@ -1,9 +1,6 @@
-import React, { useState, useRef } from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import React from 'react';
 import styled from 'styled-components';
-import ContactForm from '../../components/ContactForm';
-import emailjs from 'emailjs-com';
-import apiKey from '../contact/emailKey';
+import { useHistory } from 'react-router-dom';
 import MainScreen from '../../layout/MainScreen';
 import Project from '../../components/Project';
 import Skill from '../../components/Skill';
@@ -11,57 +8,19 @@ import SkillData from './skills';
 import ProjectData from './project';
 
 const Main = () => {
-  const form = useRef();
   const history = useHistory();
-  const [openContact, setOpenContact] = useState(false);
 
-  const goToPortfolio = () => {
-    history.push('/portfolio');
-  };
   const openContactForm = () => {
-    setOpenContact((prevState) => !prevState);
-  };
-
-  const submitFormHander = (event) => {
-    event.preventDefault();
-    emailjs
-      .sendForm(
-        apiKey.SERVICE_ID,
-        apiKey.TEMPLATE_ID,
-        form.current,
-        apiKey.USER_ID
-      )
-      .then(
-        (result) => {
-          console.log(result);
-          if (result.text === 'OK') {
-            setOpenContact((prevState) => !prevState);
-          }
-        },
-        (error) => {
-          console.log('Error', error);
-          alert('An error occurred, Please try again', error);
-        }
-      );
+   history.push('/contact')
   };
 
   return (
     <>
-      {openContact && (
-        <Contact>
-          <ContactForm
-            header="Reach me out"
-            onSubmit={submitFormHander}
-            form={form}
-            cancel={openContactForm}
-          />
-        </Contact>
-      )}
       <MainScreen>
         <Wrapper>
           <IntroScreen>
             <LeftContainer>
-              <span>WEB DEVELOPER</span>
+              <span>FULL-STACK WEB DEVELOPER</span>
               <div className="name">
                 <h1>Sirojiddin Karimov</h1>
               </div>
@@ -90,8 +49,8 @@ const Main = () => {
               <p>
                 FrontEnd Web and Mobile developer who has full passion on
                 working with frontend softwares. I have been working for this
-                area for 2 years, spending time on mostly frontend part of
-                projects, however, I have familier knowledge of backend services
+                area for 3 years, spending time on mostly frontend part of
+                projects, however, I have familiar knowledge of backend services
                 as well. I am a JS man who dedicates his most of time of
                 Javascript and its framework and libraries. I am always open to
                 discuss things, So, always feel free to contact me, Thank you.
@@ -105,6 +64,9 @@ const Main = () => {
                 return <Project key={project.id} project={project} />;
               })}
             </div>
+            {/* <div className="see__more">
+              <button onClick={()=>{}}>SEE ALL PROJECT</button>
+            </div> */}
           </Projects>
           <Skills>
             <h2>Skills</h2>
@@ -127,13 +89,13 @@ const Main = () => {
                   src={require('../../assets/contact/gmail.png')}
                   alt="gmail"
                 />
-                <a href="">Gmail</a>
+                <a href={`mailto:sirojiddin960417@gmail.com`}>Gmail</a> 
               </div>
               <div className="account">
                 <img src={require('../../assets/contact/in.png')} alt="in" />
                 <a
                   href="https://www.linkedin.com/in/karimov-sirojiddin-930b65195/"
-                  target="_blank"
+                  target="_blank" rel="noreferrer"
                 >
                   LinkedIn
                 </a>
@@ -143,12 +105,12 @@ const Main = () => {
                   src={require('../../assets/contact/github.png')}
                   alt="git"
                 />
-                <a href="https://github.com/Sirojiddin96" target="_blank">
+                <a href="https://github.com/Sirojiddin96" target="_blank" rel="noreferrer">
                   Github
                 </a>
               </div>
             </div>
-            <Title>WEB DEVELOPER 2022</Title>
+            <Title>WEB DEVELOPER 2023</Title>
           </ContactDiv>
         </Wrapper>
       </MainScreen>
@@ -156,18 +118,6 @@ const Main = () => {
   );
 };
 export default Main;
-
-const Contact = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  z-index: 1;
-  box-sizing: border-box;
-`;
 
 const Wrapper = styled.div`
   width: 100%;
@@ -188,12 +138,10 @@ const IntroScreen = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  // border: 1px solid white;
 `;
 
 const About = styled.div`
   width: 90%;
-  margin-top: 30px;
   h2 {
     font-family: 'Montserrat';
     font-style: normal;
@@ -233,7 +181,26 @@ const Projects = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 1rem;
     justify-content: space-between;
+  }
+  .see__more{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    button{
+      width: 20rem;
+      height: 4rem;
+      background-color: #00F5A0;
+      border: none;
+      border-radius: 0.6rem;
+      color: #252728;
+      font-weight: 600;
+      font-size: 1.2rem;
+      font-family: 'Montserrat';
+      cursor: pointer;
+    }
   }
 `;
 
@@ -292,6 +259,7 @@ const ContactDiv = styled.div`
         color: #bdebea;
         text-decoration: none;
         margin-top: 20px;
+        cursor: pointer;
       }
     }
   }
@@ -351,7 +319,8 @@ const LeftContainer = styled.div`
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      text-fill-color: transparent @media (max-width: 700px) {
+      text-fill-color: transparent;
+      @media (max-width: 700px) {
         font-weight: 600;
         font-size: 15px;
       }

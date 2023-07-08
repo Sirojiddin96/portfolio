@@ -24,7 +24,7 @@ const Header = () => {
     <Wrapper>
       <div className="main">
         <div className="header-left">
-          <Link to="portfolio">Home</Link>
+          <Link to="/">Home</Link>
         </div>
         <div className="header-right">
           <Link to="/portfolio">Portfolio</Link>
@@ -152,7 +152,7 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center
+    align-items: center;
     font-weight: bold;
     cursor: pointer;
     box-sizing:border-box;
