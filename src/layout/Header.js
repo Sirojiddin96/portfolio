@@ -27,6 +27,7 @@ const Header = () => {
           <Link to="/">Home</Link>
         </div>
         <div className="header-right">
+          <Link to="/experience">Experience</Link>
           <Link to="/portfolio">Portfolio</Link>
           <button className="contact__button">Contact</button>
         </div>
@@ -151,8 +152,9 @@ const Wrapper = styled.div`
     list-style: none;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
+    gap: 1rem;
     font-weight: bold;
     cursor: pointer;
     box-sizing:border-box;

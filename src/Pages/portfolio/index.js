@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import styled from 'styled-components';
-import Home from '../home';
 import { projects } from './data';
 
 import Content from '../../components/Content';
