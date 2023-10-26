@@ -5,7 +5,7 @@ import MainScreen from '../../layout/MainScreen';
 const Details = () => {
   return (
     <MainScreen>
-      <div>Hello</div>
+      <div>Hello!</div>
     </MainScreen>
   );
 };
