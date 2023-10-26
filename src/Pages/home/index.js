@@ -64,9 +64,6 @@ const Main = () => {
                 return <Project key={project.id} project={project} />;
               })}
             </div>
-            {/* <div className="see__more">
-              <button onClick={()=>{}}>SEE ALL PROJECT</button>
-            </div> */}
           </Projects>
           <Skills>
             <h2>Skills</h2>
@@ -183,24 +180,6 @@ const Projects = styled.div`
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-between;
-  }
-  .see__more{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    button{
-      width: 20rem;
-      height: 4rem;
-      background-color: #00F5A0;
-      border: none;
-      border-radius: 0.6rem;
-      color: #252728;
-      font-weight: 600;
-      font-size: 1.2rem;
-      font-family: 'Montserrat';
-      cursor: pointer;
-    }
   }
 `;
 

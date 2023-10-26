@@ -4,9 +4,17 @@ import styled from 'styled-components';
 const Project = (props) => {
   return (
     <ProjectContainer>
-     {props.project?.image && <div className="project__image">
-        <img src={props.project.image} alt="img" />
-      </div>}
+      {/* {props.project?.image?.length>=1 &&
+        <div className="project__image">
+          {
+            props.project.image.map(img => (
+              <div className='image-container'>
+                <img src={img} alt="img" />
+              </div>
+            ))
+          }
+        </div>
+      } */}
       <div className="project__content">
         <h2>{props.project.name} </h2>
         <div className="project__tools">
@@ -47,17 +55,23 @@ const ProjectContainer = styled.div`
   padding: 20px 0px;
   .project__image {
     width: 100%;
-    height: 26rem;
+    display: flex;
+    gap: 2rem;
+  //  height: 26rem;
     box-sizing: border-box;
+    .image-container{
+      width: 45%;
+      height: 10rem;
+    }
     img {
       width: 100%;
       height: 100%;
-      object-fit: fill;
+      object-fit: contain;
     }
   }
   .project__content {
     width: 100%;
-    height: 23rem;
+    height: 27rem;
     display: flex;
     flex-direction: column;
     background: #222525;

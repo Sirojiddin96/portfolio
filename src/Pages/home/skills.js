@@ -10,6 +10,11 @@ const skills = [
     image: require('../../assets/skills/tyoescruipt.png'),
   },
   {
+    id: '11',
+    name: 'Vue',
+    image: require('../../assets/skills/vue.png'),
+  },
+  {
     id: '3',
     name: 'Mongo',
     image: require('../../assets/skills/icon.png'),

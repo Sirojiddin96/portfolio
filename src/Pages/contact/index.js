@@ -9,6 +9,7 @@ const Contact = () => {
   const history = useHistory();
   const form = useRef();
   const formSubmit = (e) => {
+    console.log(form)
     e.preventDefault();
     emailjs
       .sendForm(
@@ -84,7 +85,7 @@ export default Contact;
 
 const ContactContainer = styled.div`
   width: 100%;
-  height: 90vh;
+  height: calc(100%-150px);
   display: flex;
   flex-direction: column;
   justify-content: center;

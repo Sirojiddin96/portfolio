@@ -3,7 +3,7 @@ const project = [
     id: '1',
     name: '골프존 중고 마켓',
     skills: ['Vue.JS', 'Vuex', 'JAVASCRIPT'],
-    image: require('../../assets/golfzon.png'),
+    image: [require('../../assets/golfzon.png')],
     description:
       '골프존 중고 마켓 is the Platform where we people and the company sell and buy used and new golf tools. This Project has both Website and webapp which works on both in IOS and Android OS',
     tools: ['VS CODE', 'GITHUB'],
@@ -14,9 +14,13 @@ const project = [
     id: '2',
     name: 'MeditLink & Medit Projects',
     skills: ['Vue.JS', 'Vuex', 'JAVASCRIPT', 'WEBGL', 'React.JS', 'TYPESCRIPT'],
-    image: require('../../assets/meditlink.png'),
+    image: [
+      require('../../assets/meditlink.png'),
+      require('../../assets/tag.png'),
+      require('../../assets/viewoptions.png'),
+    ],
     description:
-      'MeditLink is the Platform where clinics and dental labs can manage their patients information. Clinics can make partnership, order cases',
+      'MeditLink is the Platform where clinics and dental labs can manage their patients information. Clinics can make partnership, order cases.',
     tools: ['VS CODE', 'GITHUB Enterprise', 'GitKraken'],
     length: 'Always',
     position: 'FrontEnd',
@@ -35,11 +39,12 @@ const project = [
   {
     id: '4',
     name: 'YodAll',
-    skills: ['React Native', 'Redux Toolkit', 'JAVASCRIPT', 'NODEJS', 'EXPRESS', 'MONGODB'],
+    skills: ['React Native', 'Redux Toolkit', 'JAVASCRIPT', 'NODEJS', 'EXPRESS', 'MONGODB','AWS'],
     description: 'YodAll is the  Cross Platform mobile app which user can learn new words as dictionary and scheduled and planned way. It is ongoing personal project which will be published soon. That is why I could not put pictures. I can show demo.',
     tools: ['VS CODE', 'GITHUB', 'GitKraken'],
     length: 'Always',
     position: 'Full-Stack',
+    link: 'https://play.google.com/store/apps/details?id=com.yod_all'
   },
   {
     id: '5',
@@ -65,13 +70,12 @@ const project = [
     skills: ['Vue.JS', 'Vuex', 'JAVASCRIPT'],
     description: 'SCON Project is the charity style e-commerce platform where sponsors can sell new or used items which can be lessons or books. Earned money can be used for charity. I created Register Used Item, UsedItem Lists, and many more.',
     tools: ['VS CODE', 'GITHUB'],
-    length: 'Going on',
+    length: '2 months',
     position: 'FrontEnd',
   },
   {
     id: '8',
     name: 'Hanhwa Total Management System',
-    image: require('../../assets/admin.png'),
     skills: ['Vue.JS', 'Vuex', 'JAVASCRIPT'],
     description: 'Hanwha Total Management System is the platform which manage the company and its employees. Project creates Report about Logistics, Sales, and many more.',
     tools: ['VS CODE', 'GITHUB'],

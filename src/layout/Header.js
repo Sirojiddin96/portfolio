@@ -28,8 +28,8 @@ const Header = () => {
         </div>
         <div className="header-right">
           <Link to="/experience">Experience</Link>
-          <Link to="/portfolio">Portfolio</Link>
-          <button className="contact__button">Contact</button>
+          {/* <Link to="/portfolio">Portfolio</Link> */}
+          <Link to="/contact" className="contact__button">Contact</Link>
         </div>
         <div className="mobile-header">
           <div className="image" onClick={openSideBar}>
