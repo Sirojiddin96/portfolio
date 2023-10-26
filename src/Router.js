@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Details from './Pages/details/index';
-import Portfolio from './Pages/portfolio/index';
-import Main from './Pages/home/index';
-import Skills from './Pages/skills';
-import Contact from './Pages/contact';
-import Blog from './Pages/blog';
-import Experience from './Pages/experience';
+import Details from './pages/details';
+import Portfolio from './pages/portfolio';
+import Main from './pages/home';
+import Skills from './pages/skills';
+import Contact from './pages/contact';
+import Blog from './pages/blog';
+import Experience from './pages/experience';
 
 const Router = () => {
   return (
