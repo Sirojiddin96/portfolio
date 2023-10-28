@@ -1,4 +1,4 @@
-export default [
+const works = [
     {
         id: '1',
         name: 'Frontend Developer',
@@ -40,3 +40,5 @@ export default [
         workPlace: 'MEDIT'
     }
 ]
+
+export default works;

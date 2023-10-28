@@ -16,12 +16,12 @@ const Experience = () => {
           works.map(work => (
             <div className='bottom-container'>
               <div className='experience-years'>
-                <span>{work.start }</span>
+                <span>{work.start}</span>
                 <span>to</span>
-                <span>{ work.end}</span>
+                <span>{work.end}</span>
               </div>
               <div className='middle-line'>
-                <span className='round'/>
+                <span className='round' />
               </div>
               <div className='right-container'>
                 <span className='place'>{work.workPlace}</span>
