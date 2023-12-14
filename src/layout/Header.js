@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const Links = [
   { id: '00', name: 'Home', link: '/' },
-  { id: '01', name: 'Skills', link: '/skills' },
-  { id: '02', name: 'Portfolio', link: '/portfolio' },
+  // { id: '01', name: 'Skills', link: '/skills' },
+  { id: '02', name: 'Experience', link: '/experience' },
   { id: '03', name: 'Contact', link: '/contact' },
 ];
 
@@ -29,7 +29,9 @@ const Header = () => {
         <div className="header-right">
           <Link to="/experience">Experience</Link>
           {/* <Link to="/portfolio">Portfolio</Link> */}
-          <Link to="/contact" className="contact__button">Contact</Link>
+          <Link to="/contact" className="contact__button">
+            Contact
+          </Link>
         </div>
         <div className="mobile-header">
           <div className="image" onClick={openSideBar}>
@@ -55,14 +57,15 @@ const MobileRight = styled.div`
   display: none;
   @media (max-width: 768px) {
     width: 40%;
-    height: 150px;
+    // height: 150px;
     background: white;
     margin-top: 2px;
     position: absolute;
     right: 0;
+
     margin-right: 8px;
     z-index: 1;
-    margin-top: 105px;
+    margin-top: 140px;
     display: ${(props) => (props.isOpen ? 'flex' : 'none')};
     flex-direction: column;
     justify-content: space-between;
@@ -75,7 +78,7 @@ const MobileRight = styled.div`
       }
     }
     li {
-      height: 25%;
+      height: 2rem;
       border-bottom: 1px solid gray;
       text-decoration: none;
       display: flex;
@@ -96,7 +99,7 @@ const MobileRight = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -135,13 +138,13 @@ const Wrapper = styled.div`
     color: white;
     font-weight: bold;
     padding: 5px 0 5px 0;
-    padding-left:40px;
-    box-sizing:border-box;
+    padding-left: 40px;
+    box-sizing: border-box;
     a {
       text-decoration: none;
-      color: #BDEBEA;
-      font-size:20px;
-      font-weight:600px;
+      color: #bdebea;
+      font-size: 20px;
+      font-weight: 600px;
     }
     @media (max-width: 768px) {
       padding-left: 20px;
@@ -157,31 +160,31 @@ const Wrapper = styled.div`
     gap: 1rem;
     font-weight: bold;
     cursor: pointer;
-    box-sizing:border-box;
+    box-sizing: border-box;
     a {
       text-decoration: none;
-      color: #BDEBEA;
-      font-size:20px;
-      font-weight:bold;
+      color: #bdebea;
+      font-size: 20px;
+      font-weight: bold;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      box-sizing:border-box;
+      box-sizing: border-box;
       padding: 12px 20px 13px;
       gap: 10px;
     }
-    .contact__button{
-      background: linear-gradient(90deg, #00F5A0 0%, #00D9F5 100%);
+    .contact__button {
+      background: linear-gradient(90deg, #00f5a0 0%, #00d9f5 100%);
       border-radius: 6px;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      box-sizing:border-box;
-      padding: 12px 20px 13px;
+      box-sizing: border-box;
+      padding: 6px 20px 6px;
       gap: 10px;
-      border:none;
+      border: none;
       color: #252728;
     }
     @media (max-width: 768px) {

@@ -39,8 +39,11 @@ const project = [
   {
     id: '4',
     name: 'YodAll',
-    skills: ['React Native', 'Redux Toolkit', 'JAVASCRIPT', 'NODEJS', 'EXPRESS', 'MONGODB','AWS'],
-    description: 'YodAll is the  Cross Platform mobile app which user can learn new words as dictionary and scheduled and planned way. It is ongoing personal project which will be published soon. That is why I could not put pictures. I can show demo.',
+    skills: ['React Native', 'Redux Toolkit', 'JAVASCRIPT', 'NODEJS', 'EXPRESS', 'MONGODB', 'AWS'],
+    description: `YodAll is the  
+        Cross Platform mobile app which user can learn new words as dictionary and scheduled and planned way. 
+        It is ongoing personal project which was published recently on Android version. 
+        You can check app ANDROID version in below link.`,
     tools: ['VS CODE', 'GITHUB', 'GitKraken'],
     length: 'Always',
     position: 'Full-Stack',

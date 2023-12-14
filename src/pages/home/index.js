@@ -11,7 +11,7 @@ const Main = () => {
   const history = useHistory();
 
   const openContactForm = () => {
-   history.push('/contact')
+    history.push('/contact');
   };
 
   return (
@@ -86,13 +86,14 @@ const Main = () => {
                   src={require('../../assets/contact/gmail.png')}
                   alt="gmail"
                 />
-                <a href={`mailto:sirojiddin960417@gmail.com`}>Gmail</a> 
+                <a href={`mailto:sirojiddin960417@gmail.com`}>Gmail</a>
               </div>
               <div className="account">
                 <img src={require('../../assets/contact/in.png')} alt="in" />
                 <a
                   href="https://www.linkedin.com/in/karimov-sirojiddin-930b65195/"
-                  target="_blank" rel="noreferrer"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   LinkedIn
                 </a>
@@ -102,7 +103,11 @@ const Main = () => {
                   src={require('../../assets/contact/github.png')}
                   alt="git"
                 />
-                <a href="https://github.com/Sirojiddin96" target="_blank" rel="noreferrer">
+                <a
+                  href="https://github.com/Sirojiddin96"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Github
                 </a>
               </div>
@@ -124,8 +129,9 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   padding-top: 76px;
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
     width: 100%;
+    padding-top: 16px;
   }
 `;
 
@@ -135,10 +141,19 @@ const IntroScreen = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+  }
 `;
 
 const About = styled.div`
   width: 90%;
+  padding: 5px;
+  box-sizing: border-box;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 10px;
+  }
   h2 {
     font-family: 'Montserrat';
     font-style: normal;
@@ -153,11 +168,14 @@ const About = styled.div`
     p {
       font-family: 'Montserrat';
       font-style: normal;
-      font-weight: 500;
+      font-weight: 600;
       font-size: 18px;
       line-height: 26px;
       letter-spacing: 0.04em;
       color: #bdebea;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
     }
   }
 `;
@@ -165,6 +183,10 @@ const About = styled.div`
 const Projects = styled.div`
   width: 90%;
   margin-top: 20px;
+  @media (max-width: 768px) {
+    width: 95%;
+    padding: 5px 0px;
+  }
   h2 {
     font-family: 'Montserrat';
     font-style: normal;
@@ -180,11 +202,17 @@ const Projects = styled.div`
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-between;
+    @media (max-width: 768px) {
+      width: 100%;
+    }
   }
 `;
 
 const Skills = styled.div`
   width: 90%;
+  @media (max-width: 768px) {
+    width: 95%;
+  }
   h2 {
     font-family: 'Montserrat';
     font-style: normal;
@@ -199,6 +227,8 @@ const Skills = styled.div`
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    gap: 1.4rem;
+    box-sizing: border-box;
   }
 `;
 
@@ -266,10 +296,11 @@ const LeftContainer = styled.div`
     width: 70%;
     margin-bottom: 20px;
   }
-  @media (max-width: 700px) {
-    width: 50%;
+  @media (max-width: 768px) {
+    width: 100%;
     align-items: flex-start;
-    padding-top: 50px;
+    padding: 10px;
+    box-sizing: border-box;
   }
   @media (max-width: 400px) {
     width: 100%;
@@ -310,15 +341,15 @@ const LeftContainer = styled.div`
     margin-top: 10px;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 16px;
     line-height: 24px;
     /* or 150% */
     letter-spacing: 0.04em;
     /* text */
     color: #bdebea;
-    @media (max-width: 700px) {
-      width: 200px;
+    @media (max-width: 768px) {
+      width: 100%;
       font-size: small;
     }
   }

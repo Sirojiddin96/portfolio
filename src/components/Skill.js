@@ -20,7 +20,9 @@ const PersonalSkill = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin-top: 30px;
+  @media (max-width: 768px) {
+    width: 47%;
+  }
   h3 {
     font-family: 'Montserrat';
     font-style: normal;

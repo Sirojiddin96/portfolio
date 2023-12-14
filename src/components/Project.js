@@ -35,10 +35,18 @@ const Project = (props) => {
             return <span key={skill}>{skill} </span>;
           })}
         </div>
-        {props.project.link && <div className="project__info">
-          <strong>Link: </strong>
-          <a href={props.project.link} target="_blank" rel="noopener noreferrer">{props.project.link}</a>
-        </div>}
+        {props.project.link && (
+          <div className="project__info">
+            <strong>Link: </strong>
+            <a
+              href={props.project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {props.project.link}
+            </a>
+          </div>
+        )}
       </div>
     </ProjectContainer>
   );
@@ -47,19 +55,20 @@ const Project = (props) => {
 export default Project;
 
 const ProjectContainer = styled.div`
-  width:49%;
+  width: 49%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 20px 0px;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
   .project__image {
     width: 100%;
     display: flex;
     gap: 2rem;
-  //  height: 26rem;
     box-sizing: border-box;
-    .image-container{
+    .image-container {
       width: 45%;
       height: 10rem;
     }
@@ -71,7 +80,7 @@ const ProjectContainer = styled.div`
   }
   .project__content {
     width: 100%;
-    height: 27rem;
+    min-height: 27rem;
     display: flex;
     flex-direction: column;
     background: #222525;
@@ -81,7 +90,7 @@ const ProjectContainer = styled.div`
     border-bottom-left-radius: 6px;
     .project__tools {
       display: flex;
-    // width: 60%;
+      // width: 60%;
       justify-content: flex-start;
       flex-direction: row;
       flex-wrap: wrap;
@@ -133,7 +142,7 @@ const ProjectContainer = styled.div`
         font-size: 16px;
         font-weight: bold;
       }
-      a{
+      a {
         color: #00d9f5;
       }
     }
